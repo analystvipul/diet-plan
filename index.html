@@ -1,164 +1,248 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pregnancy Nutrition Guide — 5th Month</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Prajakta's Pregnancy Nutrition Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --cream: #fdf8f0;
-    --warm-white: #fffcf7;
-    --sage: #7a9e7e;
-    --deep-sage: #4a7050;
-    --rose: #e8927c;
-    --deep-rose: #c9604a;
-    --gold: #d4a843;
-    --soft-gold: #f5e6c0;
-    --charcoal: #2d2d2d;
-    --text-mid: #5a5a5a;
-    --text-light: #8a8a8a;
-    --border: #e8ddd0;
-  }
+:root {
+  --cream: #fdf8f0;
+  --warm-white: #fffcf7;
+  --sage: #7a9e7e;
+  --deep-sage: #4a7050;
+  --rose: #e8927c;
+  --deep-rose: #c9604a;
+  --gold: #d4a843;
+  --soft-gold: #f5e6c0;
+  --charcoal: #2d2d2d;
+  --text-mid: #5a5a5a;
+  --text-light: #8a8a8a;
+  --border: #e8ddd0;
+  --lang-toggle-bg: rgba(255,255,255,0.2);
+}
 
-- { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-background: var(–cream);
-font-family: ‘DM Sans’, sans-serif;
-color: var(–charcoal);
-line-height: 1.7;
+  background: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--charcoal);
+  line-height: 1.7;
+}
+
+body.lang-mr {
+  font-family: 'Tiro Devanagari Marathi', 'DM Sans', sans-serif;
+}
+
+/* ── LANGUAGE TOGGLE ── */
+.lang-bar {
+  background: #2d4a32;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+.lang-label { color: rgba(255,255,255,0.7); font-size: 12px; letter-spacing: 1px; }
+.lang-toggle {
+  display: flex;
+  background: rgba(255,255,255,0.15);
+  border-radius: 30px;
+  padding: 3px;
+  gap: 2px;
+}
+.lang-btn {
+  padding: 5px 14px;
+  border-radius: 24px;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  letter-spacing: 0.5px;
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+}
+.lang-btn.active {
+  background: #fff;
+  color: #2d4a32;
 }
 
 /* ── HERO ── */
 .hero {
-background: linear-gradient(135deg, #4a7050 0%, #7a9e7e 50%, #a8c5a0 100%);
-padding: 60px 24px 80px;
-text-align: center;
-position: relative;
-overflow: hidden;
+  background: linear-gradient(135deg, #3d5c41 0%, #5c8860 40%, #7a9e7e 75%, #a8c5a0 100%);
+  padding: 52px 24px 72px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 .hero::before {
-content: ‘’;
-position: absolute; inset: 0;
-background: radial-gradient(ellipse at 30% 50%, rgba(212,168,67,.18) 0%, transparent 60%),
-radial-gradient(ellipse at 80% 20%, rgba(232,146,124,.15) 0%, transparent 50%);
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 25% 60%, rgba(212,168,67,.2) 0%, transparent 55%),
+              radial-gradient(ellipse at 80% 20%, rgba(232,146,124,.18) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 100%, rgba(255,255,255,.06) 0%, transparent 60%);
 }
-.hero-badge {
-display: inline-block;
-background: rgba(255,255,255,.2);
-border: 1px solid rgba(255,255,255,.4);
-color: #fff;
-font-size: 11px;
-letter-spacing: 3px;
-text-transform: uppercase;
-padding: 6px 18px;
-border-radius: 50px;
-margin-bottom: 20px;
-font-weight: 500;
+.hero-names {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.35);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 7px 20px;
+  border-radius: 50px;
+  margin-bottom: 18px;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
 }
 .hero h1 {
-font-family: ‘Playfair Display’, serif;
-font-size: clamp(32px, 7vw, 52px);
-color: #fff;
-font-weight: 700;
-line-height: 1.15;
-margin-bottom: 16px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 6.5vw, 50px);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
 }
 .hero h1 em { font-style: italic; color: #f5e6c0; }
-.hero p {
-color: rgba(255,255,255,.85);
-font-size: 16px;
-max-width: 560px;
-margin: 0 auto;
-font-weight: 300;
+.hero-sub {
+  color: rgba(255,255,255,.85);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 22px;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
 }
-.hero-icons {
-display: flex;
-justify-content: center;
-gap: 12px;
-margin-top: 28px;
-flex-wrap: wrap;
+.hero-pills {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 .hero-pill {
-background: rgba(255,255,255,.15);
-border: 1px solid rgba(255,255,255,.3);
-color: #fff;
-padding: 6px 14px;
-border-radius: 30px;
-font-size: 13px;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.28);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
 }
 
-/* ── NAV TABS ── */
+/* ── PROGRESS BANNER ── */
+.progress-banner {
+  background: var(--soft-gold);
+  border-bottom: 1px solid #e0c880;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.progress-banner::-webkit-scrollbar { display: none; }
+.prog-item {
+  flex-shrink: 0;
+  text-align: center;
+  cursor: pointer;
+}
+.prog-week {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  border: 2px solid #c9a830;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #7a5c1e;
+  background: transparent;
+  transition: all 0.2s;
+  margin: 0 auto 4px;
+}
+.prog-week.current {
+  background: #d4a843;
+  border-color: #d4a843;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(212,168,67,0.5);
+}
+.prog-week.done {
+  background: #f0e0a0;
+  border-color: #c9a830;
+}
+.prog-label { font-size: 10px; color: #9a7a2a; font-weight: 500; }
+.prog-connector {
+  flex-shrink: 0;
+  width: 24px; height: 2px;
+  background: #d4b860;
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+
+/* ── TAB NAV ── */
 .tab-nav {
-position: sticky;
-top: 0;
-background: var(–warm-white);
-border-bottom: 1px solid var(–border);
-z-index: 100;
-display: flex;
-overflow-x: auto;
-padding: 0 12px;
-scrollbar-width: none;
+  position: sticky;
+  top: 0;
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  display: flex;
+  overflow-x: auto;
+  padding: 0 10px;
+  scrollbar-width: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 .tab-nav::-webkit-scrollbar { display: none; }
 .tab-btn {
-flex-shrink: 0;
-padding: 14px 18px;
-font-size: 13px;
-font-weight: 500;
-color: var(–text-light);
-background: none;
-border: none;
-border-bottom: 2px solid transparent;
-cursor: pointer;
-transition: all .2s;
-white-space: nowrap;
-font-family: ‘DM Sans’, sans-serif;
+  flex-shrink: 0;
+  padding: 13px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-light);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
 }
-.tab-btn.active {
-color: var(–deep-sage);
-border-bottom-color: var(–deep-sage);
-}
-.tab-btn:hover { color: var(–deep-sage); }
+.tab-btn.active { color: var(--deep-sage); border-bottom-color: var(--deep-sage); }
+.tab-btn:hover { color: var(--deep-sage); }
 
 /* ── SECTIONS ── */
-.section { display: none; padding: 28px 20px 60px; max-width: 800px; margin: 0 auto; }
-.section.active { display: block; }
+.section { display: none; padding: 28px 20px 60px; max-width: 820px; margin: 0 auto; }
+.section.active { display: block; animation: fadeUp .3s ease both; }
 
 .section-title {
-font-family: ‘Playfair Display’, serif;
-font-size: 26px;
-color: var(–charcoal);
-margin-bottom: 6px;
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: var(--charcoal);
+  margin-bottom: 6px;
 }
-.section-sub {
-color: var(–text-light);
-font-size: 14px;
-margin-bottom: 28px;
-}
+.section-sub { color: var(--text-light); font-size: 14px; margin-bottom: 28px; }
 
 /* ── FOOD GRID ── */
 .food-category {
-background: var(–warm-white);
-border: 1px solid var(–border);
-border-radius: 16px;
-padding: 22px;
-margin-bottom: 20px;
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 20px;
 }
-.cat-header {
-display: flex;
-align-items: center;
-gap: 12px;
-margin-bottom: 16px;
-}
+.cat-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .cat-icon {
-width: 42px; height: 42px;
-border-radius: 12px;
-display: flex; align-items: center; justify-content: center;
-font-size: 20px;
-flex-shrink: 0;
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
 }
 .cat-icon.green { background: #e8f5e9; }
 .cat-icon.orange { background: #fff3e0; }
@@ -166,108 +250,76 @@ flex-shrink: 0;
 .cat-icon.red { background: #fce4ec; }
 .cat-icon.brown { background: #efebe9; }
 .cat-icon.blue { background: #e3f2fd; }
-
-.cat-name {
-font-family: ‘Playfair Display’, serif;
-font-size: 18px;
-font-weight: 700;
-}
-.cat-note { font-size: 12px; color: var(–text-light); }
+.cat-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; }
+.cat-note { font-size: 12px; color: var(--text-light); }
 
 .food-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .food-tag {
-background: var(–soft-gold);
-color: #7a5c1e;
-padding: 5px 12px;
-border-radius: 20px;
-font-size: 13px;
-font-weight: 500;
+  background: var(--soft-gold);
+  color: #7a5c1e;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: default;
+  transition: transform 0.15s;
 }
+.food-tag:hover { transform: translateY(-1px); }
 .food-tag.green-tag { background: #e8f5e9; color: #2e7d32; }
 .food-tag.rose-tag { background: #fce4ec; color: #880e4f; }
 .food-tag.blue-tag { background: #e3f2fd; color: #1565c0; }
 
 .nutrient-row {
-display: flex;
-flex-wrap: wrap;
-gap: 8px;
-margin-top: 12px;
-padding-top: 12px;
-border-top: 1px solid var(–border);
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 12px; padding-top: 12px;
+  border-top: 1px solid var(--border);
 }
 .nutrient-pill {
-font-size: 11px;
-padding: 3px 10px;
-border-radius: 20px;
-font-weight: 500;
-letter-spacing: .3px;
+  font-size: 11px; padding: 3px 10px;
+  border-radius: 20px; font-weight: 500; letter-spacing: .3px;
 }
-.pill-sage { background: #e8f5e9; color: var(–deep-sage); }
+.pill-sage { background: #e8f5e9; color: var(--deep-sage); }
 .pill-rose { background: #fce4ec; color: #b71c1c; }
-.pill-gold { background: var(–soft-gold); color: #7a5c1e; }
+.pill-gold { background: var(--soft-gold); color: #7a5c1e; }
 
 /* ── MEAL PLAN ── */
 .day-header {
-background: linear-gradient(135deg, var(–deep-sage), var(–sage));
-color: #fff;
-padding: 16px 20px;
-border-radius: 14px 14px 0 0;
-font-family: ‘Playfair Display’, serif;
-font-size: 16px;
+  background: linear-gradient(135deg, var(--deep-sage), var(--sage));
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 14px 14px 0 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
 }
-.meal-timeline { background: var(–warm-white); border: 1px solid var(–border); border-top: none; border-radius: 0 0 14px 14px; overflow: hidden; margin-bottom: 24px; }
-
+.meal-timeline {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 14px 14px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
 .meal-row {
-display: flex;
-align-items: flex-start;
-padding: 18px 20px;
-border-bottom: 1px solid var(–border);
-gap: 16px;
-transition: background .2s;
+  display: flex; align-items: flex-start;
+  padding: 16px 20px; border-bottom: 1px solid var(--border);
+  gap: 16px; transition: background .2s;
 }
 .meal-row:last-child { border-bottom: none; }
-.meal-row:hover { background: var(–cream); }
-
-.meal-time {
-flex-shrink: 0;
-width: 90px;
-text-align: center;
-}
-.time-label {
-font-size: 11px;
-color: var(–text-light);
-text-transform: uppercase;
-letter-spacing: 1px;
-display: block;
-}
-.time-value {
-font-size: 13px;
-font-weight: 600;
-color: var(–deep-sage);
-}
-
-.meal-dot {
-width: 10px; height: 10px;
-border-radius: 50%;
-margin-top: 6px;
-flex-shrink: 0;
-}
-.dot-morning { background: var(–gold); }
-.dot-noon { background: var(–rose); }
-.dot-evening { background: var(–sage); }
+.meal-row:hover { background: var(--cream); }
+.meal-time { flex-shrink: 0; width: 88px; text-align: center; }
+.time-label { font-size: 10px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; display: block; }
+.time-value { font-size: 13px; font-weight: 700; color: var(--deep-sage); }
+.meal-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+.dot-morning { background: var(--gold); }
+.dot-noon { background: var(--rose); }
+.dot-evening { background: var(--sage); }
 .dot-night { background: #9575cd; }
 .dot-snack { background: #4db6ac; }
-
 .meal-content { flex: 1; }
 .meal-name { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
-.meal-desc { font-size: 13px; color: var(–text-mid); }
+.meal-desc { font-size: 13px; color: var(--text-mid); }
 .meal-benefits { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-.benefit-chip {
-font-size: 11px;
-padding: 2px 9px;
-border-radius: 12px;
-font-weight: 500;
-}
+.benefit-chip { font-size: 11px; padding: 2px 9px; border-radius: 12px; font-weight: 500; }
 .chip-green { background: #e8f5e9; color: #2e7d32; }
 .chip-orange { background: #fff3e0; color: #e65100; }
 .chip-purple { background: #ede7f6; color: #4527a0; }
@@ -275,876 +327,1154 @@ font-weight: 500;
 
 /* ── RECIPES ── */
 .recipe-card {
-background: var(–warm-white);
-border: 1px solid var(–border);
-border-radius: 16px;
-overflow: hidden;
-margin-bottom: 24px;
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
 }
 .recipe-header {
-padding: 20px 22px 16px;
-border-bottom: 1px solid var(–border);
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-gap: 12px;
+  padding: 20px 22px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;
 }
-.recipe-title {
-font-family: ‘Playfair Display’, serif;
-font-size: 20px;
-font-weight: 700;
-margin-bottom: 4px;
-}
-.recipe-meta { font-size: 13px; color: var(–text-light); }
+.recipe-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.recipe-meta { font-size: 13px; color: var(--text-light); }
 .recipe-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-.recipe-badge {
-font-size: 11px;
-padding: 3px 10px;
-border-radius: 12px;
-font-weight: 600;
-}
+.recipe-badge { font-size: 11px; padding: 3px 10px; border-radius: 12px; font-weight: 600; }
 .badge-veg { background: #e8f5e9; color: #2e7d32; }
 .badge-protein { background: #fff3e0; color: #e65100; }
 .badge-iron { background: #fce4ec; color: #880e4f; }
 .badge-calcium { background: #e3f2fd; color: #1565c0; }
 .badge-folate { background: #ede7f6; color: #4527a0; }
-
 .recipe-body { display: grid; grid-template-columns: 1fr 1.6fr; }
 @media(max-width:580px){ .recipe-body { grid-template-columns: 1fr; } }
-
-.ingredients-col {
-padding: 18px 20px;
-border-right: 1px solid var(–border);
-background: var(–cream);
-}
-@media(max-width:580px){ .ingredients-col { border-right: none; border-bottom: 1px solid var(–border); } }
-
-.col-title {
-font-size: 11px;
-text-transform: uppercase;
-letter-spacing: 2px;
-color: var(–text-light);
-font-weight: 500;
-margin-bottom: 12px;
-}
+.ingredients-col { padding: 18px 20px; border-right: 1px solid var(--border); background: var(--cream); }
+@media(max-width:580px){ .ingredients-col { border-right: none; border-bottom: 1px solid var(--border); } }
+.col-title { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-light); font-weight: 500; margin-bottom: 12px; }
 .ingredient-list { list-style: none; }
-.ingredient-list li {
-display: flex;
-align-items: flex-start;
-gap: 8px;
-font-size: 13px;
-padding: 4px 0;
-color: var(–charcoal);
-}
-.ingredient-list li::before {
-content: ‘•’;
-color: var(–sage);
-font-weight: 700;
-flex-shrink: 0;
-margin-top: 1px;
-}
-
+.ingredient-list li { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; padding: 4px 0; color: var(--charcoal); }
+.ingredient-list li::before { content: '•'; color: var(--sage); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 .steps-col { padding: 18px 20px; }
 .step { display: flex; gap: 14px; margin-bottom: 14px; }
 .step:last-child { margin-bottom: 0; }
-.step-num {
-width: 24px; height: 24px;
-background: var(–deep-sage);
-color: #fff;
-border-radius: 50%;
-display: flex; align-items: center; justify-content: center;
-font-size: 12px;
-font-weight: 700;
-flex-shrink: 0;
-margin-top: 1px;
-}
-.step-text { font-size: 13px; color: var(–charcoal); line-height: 1.6; }
+.step-num { width: 24px; height: 24px; background: var(--deep-sage); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.step-text { font-size: 13px; color: var(--charcoal); line-height: 1.6; }
 
-/* ── NUTRIENTS INFO ── */
-.info-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-gap: 14px;
-margin-bottom: 28px;
-}
-.info-card {
-background: var(–warm-white);
-border: 1px solid var(–border);
-border-radius: 14px;
-padding: 18px;
-}
-.info-icon { font-size: 26px; margin-bottom: 10px; }
-.info-name { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
-.info-why { font-size: 12px; color: var(–text-mid); line-height: 1.5; }
-.info-amount {
-margin-top: 10px;
-font-size: 11px;
-color: var(–deep-sage);
-font-weight: 600;
-text-transform: uppercase;
-letter-spacing: .5px;
-}
+/* ── NUTRIENTS ── */
+.info-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; margin-bottom: 28px; }
+.info-card { background: var(--warm-white); border: 1px solid var(--border); border-radius: 14px; padding: 18px; transition: transform 0.2s, box-shadow 0.2s; cursor: default; }
+.info-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+.info-icon { font-size: 28px; margin-bottom: 10px; }
+.info-name { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+.info-why { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+.info-amount { margin-top: 10px; font-size: 11px; color: var(--deep-sage); font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
 
 /* ── TIPS ── */
 .tip-box {
-background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
-border: 1px solid #c8e6c9;
-border-radius: 14px;
-padding: 20px;
-margin-bottom: 16px;
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+  border: 1px solid #c8e6c9;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 16px;
 }
-.tip-box h4 { font-size: 14px; font-weight: 600; color: var(–deep-sage); margin-bottom: 8px; }
-.tip-box p { font-size: 13px; color: var(–text-mid); }
+.tip-box h4 { font-size: 14px; font-weight: 600; color: var(--deep-sage); margin-bottom: 8px; }
+.tip-box p { font-size: 13px; color: var(--text-mid); }
+
+/* ── CHECKLIST ── */
+.checklist-section { margin-bottom: 28px; }
+.checklist-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  margin-bottom: 14px;
+  color: var(--charcoal);
+}
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+  user-select: none;
+}
+.check-item:hover { background: #f0f7f1; }
+.check-item.checked { background: #e8f5e9; border-color: #a5d6a7; }
+.check-box {
+  width: 22px; height: 22px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+  margin-top: 1px;
+  font-size: 14px;
+}
+.check-item.checked .check-box { background: var(--deep-sage); border-color: var(--deep-sage); color: #fff; }
+.check-text { flex: 1; }
+.check-label { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+.check-desc { font-size: 12px; color: var(--text-mid); }
+.check-time { font-size: 11px; color: var(--text-light); font-weight: 500; background: var(--cream); padding: 2px 8px; border-radius: 10px; flex-shrink: 0; }
+
+.checklist-progress {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.prog-bar-wrap { flex: 1; background: var(--border); border-radius: 10px; height: 8px; overflow: hidden; }
+.prog-bar-fill { height: 100%; background: linear-gradient(90deg, var(--deep-sage), var(--sage)); border-radius: 10px; transition: width 0.4s ease; }
+.prog-text { font-size: 13px; color: var(--deep-sage); font-weight: 700; flex-shrink: 0; }
+
+/* ── WATER TRACKER ── */
+.water-tracker {
+  background: linear-gradient(135deg, #e3f2fd, #f0f8ff);
+  border: 1px solid #bbdefb;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 24px;
+}
+.water-title { font-weight: 700; font-size: 16px; color: #1565c0; margin-bottom: 4px; }
+.water-sub { font-size: 12px; color: #5c87bb; margin-bottom: 16px; }
+.glasses-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+.glass-btn {
+  width: 46px; height: 54px;
+  border: 2px solid #bbdefb;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  transition: all 0.2s;
+  position: relative;
+}
+.glass-btn.filled { background: #1976d2; border-color: #1976d2; }
+.glass-btn:hover { transform: scale(1.05); }
+.water-count { font-size: 14px; color: #1565c0; font-weight: 600; }
+
+/* ── MOOD LOG ── */
+.mood-tracker {
+  background: linear-gradient(135deg, #fce4ec, #fdf0f5);
+  border: 1px solid #f48fb1;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 24px;
+}
+.mood-title { font-weight: 700; font-size: 16px; color: #880e4f; margin-bottom: 4px; }
+.mood-sub { font-size: 12px; color: #c06080; margin-bottom: 16px; }
+.mood-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.mood-btn {
+  flex: 1; min-width: 60px;
+  padding: 10px 6px;
+  border: 2px solid #f8bbd0;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  text-align: center;
+  font-size: 11px;
+  transition: all 0.2s;
+  color: #880e4f;
+  font-weight: 500;
+}
+.mood-emoji { font-size: 22px; display: block; margin-bottom: 4px; }
+.mood-btn.selected { background: #e91e63; border-color: #e91e63; color: #fff; }
+.mood-btn:hover { transform: translateY(-2px); }
+.mood-log-list { margin-top: 14px; border-top: 1px solid #f8bbd0; padding-top: 14px; }
+.mood-log-entry { display: flex; gap: 10px; align-items: center; font-size: 13px; color: #880e4f; padding: 6px 0; border-bottom: 1px solid rgba(248,187,208,0.5); }
+.mood-log-time { font-size: 11px; color: #c06080; min-width: 55px; }
+
+/* ── NOTES ── */
+.notes-section {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 24px;
+}
+.notes-title { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 14px; }
+.notes-area {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--charcoal);
+  background: var(--cream);
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.notes-area:focus { border-color: var(--sage); }
+.notes-actions { display: flex; gap: 10px; margin-top: 10px; }
+.btn-save {
+  background: var(--deep-sage);
+  color: #fff;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-save:hover { background: #3a5c40; }
+.btn-clear {
+  background: transparent;
+  color: var(--text-light);
+  border: 1px solid var(--border);
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.saved-notes { margin-top: 14px; border-top: 1px solid var(--border); padding-top: 14px; }
+.saved-note-item {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.note-date { font-size: 11px; color: var(--text-light); margin-bottom: 5px; }
+.note-text { font-size: 13px; color: var(--charcoal); }
+.note-delete {
+  position: absolute;
+  top: 10px; right: 12px;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ── QUOTE CARD ── */
+.quote-card {
+  background: linear-gradient(135deg, #4a7050, #7a9e7e);
+  border-radius: 16px;
+  padding: 28px 24px;
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.quote-card::before {
+  content: '"';
+  position: absolute;
+  top: -10px; left: 16px;
+  font-size: 100px;
+  font-family: 'Playfair Display', serif;
+  color: rgba(255,255,255,0.12);
+  line-height: 1;
+}
+.quote-text { font-family: 'Playfair Display', serif; font-size: 18px; color: #fff; font-style: italic; line-height: 1.5; margin-bottom: 12px; position: relative; z-index: 1; }
+.quote-author { font-size: 12px; color: rgba(255,255,255,0.7); letter-spacing: 1px; position: relative; z-index: 1; }
+.quote-refresh {
+  margin-top: 14px;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.quote-refresh:hover { background: rgba(255,255,255,0.3); }
+
+/* ── AVOID FOODS ── */
+.avoid-box {
+  background: #fce4ec;
+  border: 1px solid #f48fb1;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.avoid-box h4 { font-size: 14px; font-weight: 700; color: #880e4f; margin-bottom: 8px; }
+.avoid-box p { font-size: 13px; color: #5a5a5a; }
+.doc-box {
+  background: var(--soft-gold);
+  border: 1px solid var(--gold);
+  border-radius: 14px;
+  padding: 20px;
+}
+.doc-box h4 { font-size: 14px; font-weight: 700; color: #7a5c1e; margin-bottom: 8px; }
+.doc-box p { font-size: 13px; color: #5a5a5a; }
 
 /* ── FOOTER ── */
 .footer {
-background: var(–charcoal);
-color: rgba(255,255,255,.5);
-text-align: center;
-padding: 24px;
-font-size: 12px;
+  background: var(--charcoal);
+  color: rgba(255,255,255,.45);
+  text-align: center;
+  padding: 24px;
+  font-size: 12px;
 }
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
-from { opacity: 0; transform: translateY(16px); }
-to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-.section.active > * {
-animation: fadeUp .35s ease both;
-}
-.section.active > *:nth-child(2) { animation-delay: .05s; }
-.section.active > *:nth-child(3) { animation-delay: .1s; }
-.section.active > *:nth-child(4) { animation-delay: .15s; }
-</style>
 
+/* ── TOAST ── */
+.toast {
+  position: fixed;
+  bottom: 20px; left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--charcoal);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 999;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ── SUMMARY CARDS (tracker tab) ── */
+.summary-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.summary-card {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 16px;
+  text-align: center;
+}
+.summary-icon { font-size: 28px; margin-bottom: 8px; }
+.summary-value { font-size: 24px; font-weight: 700; color: var(--deep-sage); line-height: 1; }
+.summary-label { font-size: 12px; color: var(--text-light); margin-top: 4px; }
+</style>
 </head>
 <body>
 
-<!-- HERO -->
-
-<div class="hero">
-  <div class="hero-badge">5th Month Pregnancy</div>
-  <h1>Nourishing <em>You</em><br>& Your Baby</h1>
-  <p>A complete vegetarian nutrition guide with daily meal plans and recipes crafted for the 5th month of pregnancy</p>
-  <div class="hero-icons">
-    <span class="hero-pill">🌿 100% Vegetarian</span>
-    <span class="hero-pill">💪 Protein Rich</span>
-    <span class="hero-pill">🧬 Folate & Iron</span>
-    <span class="hero-pill">🦴 Calcium</span>
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <span class="lang-label" id="lang-label-text">Language / भाषा</span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="btn-mr" onclick="setLang('mr')">मराठी</button>
   </div>
 </div>
 
-<!-- TAB NAV -->
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-names">💛 <span data-en="Vaibhav & Prajakta's Journey" data-mr="वैभव आणि प्राजक्ताचा प्रवास">Vaibhav & Prajakta's Journey</span></div>
+  <h1 data-en="Nourishing <em>You</em><br>& Your Baby" data-mr="तुम्हाला आणि<br>तुमच्या <em>बाळाला</em> पोषण">Nourishing <em>You</em><br>& Your Baby</h1>
+  <p class="hero-sub" data-en="A complete vegetarian nutrition guide with daily meal plans and recipes crafted especially for Prajakta" data-mr="प्राजक्तासाठी खास तयार केलेला संपूर्ण शाकाहारी पोषण मार्गदर्शक — दैनंदिन जेवण योजना आणि पाककृतींसह">A complete vegetarian nutrition guide with daily meal plans and recipes crafted especially for Prajakta</p>
+  <div class="hero-pills">
+    <span class="hero-pill" data-en="🌿 100% Vegetarian" data-mr="🌿 १००% शाकाहारी">🌿 100% Vegetarian</span>
+    <span class="hero-pill" data-en="💪 Protein Rich" data-mr="💪 प्रथिनयुक्त">💪 Protein Rich</span>
+    <span class="hero-pill" data-en="🧬 Folate & Iron" data-mr="🧬 फोलेट आणि लोह">🧬 Folate & Iron</span>
+    <span class="hero-pill" data-en="🦴 Calcium" data-mr="🦴 कॅल्शियम">🦴 Calcium</span>
+  </div>
+</div>
 
-<nav class="tab-nav">
-  <button class="tab-btn active" onclick="showTab('foods')">🥬 Foods List</button>
-  <button class="tab-btn" onclick="showTab('nutrients')">🧬 Key Nutrients</button>
-  <button class="tab-btn" onclick="showTab('mealplan')">🍽 Daily Meal Plan</button>
-  <button class="tab-btn" onclick="showTab('recipes')">👩‍🍳 Recipes</button>
-  <button class="tab-btn" onclick="showTab('tips')">💡 Tips & Cautions</button>
+<!-- PROGRESS BANNER -->
+<div class="progress-banner" id="progress-banner">
+  <!-- Rendered by JS -->
+</div>
+
+<!-- TAB NAV -->
+<nav class="tab-nav" id="tab-nav">
+  <!-- Rendered by JS -->
 </nav>
 
-<!-- ═══════════════════════════════════ FOODS ═══════════════════════════════════ -->
-
+<!-- ═══════════════════ FOODS ═══════════════════ -->
 <section id="foods" class="section active">
-  <p class="section-title">Best Foods in Pregnancy</p>
-  <p class="section-sub">All recommended fruits, vegetables, nuts, grains & dairy for the 5th month</p>
-
-  <!-- FRUITS -->
+  <p class="section-title" data-en="Best Foods in Pregnancy" data-mr="गर्भावस्थेत सर्वोत्तम खाद्यपदार्थ">Best Foods in Pregnancy</p>
+  <p class="section-sub" data-en="All recommended fruits, vegetables, nuts, grains & dairy" data-mr="सर्व शिफारस केलेली फळे, भाज्या, सुकामेवा, धान्ये आणि दुग्धजन्य पदार्थ">All recommended fruits, vegetables, nuts, grains & dairy</p>
 
   <div class="food-category">
     <div class="cat-header">
       <div class="cat-icon orange">🍊</div>
       <div>
-        <div class="cat-name">Fruits</div>
-        <div class="cat-note">Rich in Vitamin C, Folate, Fibre & Natural Sugars</div>
+        <div class="cat-name" data-en="Fruits" data-mr="फळे">Fruits</div>
+        <div class="cat-note" data-en="Rich in Vitamin C, Folate, Fibre & Natural Sugars" data-mr="व्हिटॅमिन C, फोलेट, फायबर आणि नैसर्गिक साखरेने समृद्ध">Rich in Vitamin C, Folate, Fibre & Natural Sugars</div>
       </div>
     </div>
     <div class="food-tags">
-      <span class="food-tag">🍌 Banana</span>
-      <span class="food-tag green-tag">🥭 Mango (ripe, moderate)</span>
-      <span class="food-tag">🍊 Orange</span>
-      <span class="food-tag green-tag">🍎 Apple</span>
-      <span class="food-tag">🍇 Grapes</span>
-      <span class="food-tag rose-tag">🍓 Strawberry</span>
-      <span class="food-tag green-tag">🍈 Guava</span>
-      <span class="food-tag">🍑 Pear</span>
-      <span class="food-tag green-tag">🫐 Blueberry</span>
-      <span class="food-tag">🍒 Pomegranate</span>
-      <span class="food-tag rose-tag">🍉 Watermelon</span>
-      <span class="food-tag green-tag">🥝 Kiwi</span>
-      <span class="food-tag">🍋 Lemon</span>
-      <span class="food-tag">🫒 Avocado</span>
-      <span class="food-tag green-tag">🍍 Pineapple (moderate)</span>
-      <span class="food-tag">🍒 Cherries</span>
-      <span class="food-tag rose-tag">🫐 Amla (Indian Gooseberry)</span>
+      <span class="food-tag" data-en="🍌 Banana" data-mr="🍌 केळे">🍌 Banana</span>
+      <span class="food-tag green-tag" data-en="🥭 Mango (ripe, moderate)" data-mr="🥭 आंबा (पिकलेला, कमी)">🥭 Mango (ripe, moderate)</span>
+      <span class="food-tag" data-en="🍊 Orange" data-mr="🍊 संत्री">🍊 Orange</span>
+      <span class="food-tag green-tag" data-en="🍎 Apple" data-mr="🍎 सफरचंद">🍎 Apple</span>
+      <span class="food-tag" data-en="🍇 Grapes" data-mr="🍇 द्राक्षे">🍇 Grapes</span>
+      <span class="food-tag rose-tag" data-en="🍓 Strawberry" data-mr="🍓 स्ट्रॉबेरी">🍓 Strawberry</span>
+      <span class="food-tag green-tag" data-en="🍈 Guava" data-mr="🍈 पेरू">🍈 Guava</span>
+      <span class="food-tag" data-en="🍑 Pear" data-mr="🍑 नाशपाती">🍑 Pear</span>
+      <span class="food-tag green-tag" data-en="🫐 Blueberry" data-mr="🫐 ब्लूबेरी">🫐 Blueberry</span>
+      <span class="food-tag" data-en="🍒 Pomegranate" data-mr="🍒 डाळिंब">🍒 Pomegranate</span>
+      <span class="food-tag rose-tag" data-en="🍉 Watermelon" data-mr="🍉 टरबूज">🍉 Watermelon</span>
+      <span class="food-tag green-tag" data-en="🥝 Kiwi" data-mr="🥝 कीवी">🥝 Kiwi</span>
+      <span class="food-tag" data-en="🍋 Lemon" data-mr="🍋 लिंबू">🍋 Lemon</span>
+      <span class="food-tag" data-en="🫒 Avocado" data-mr="🫒 ॲव्होकाडो">🫒 Avocado</span>
+      <span class="food-tag rose-tag" data-en="🫐 Amla (Indian Gooseberry)" data-mr="🫐 आवळा">🫐 Amla (Indian Gooseberry)</span>
     </div>
     <div class="nutrient-row">
-      <span class="nutrient-pill pill-sage">Vitamin C</span>
-      <span class="nutrient-pill pill-rose">Folate</span>
-      <span class="nutrient-pill pill-gold">Potassium</span>
-      <span class="nutrient-pill pill-sage">Fibre</span>
-      <span class="nutrient-pill pill-rose">Antioxidants</span>
+      <span class="nutrient-pill pill-sage" data-en="Vitamin C" data-mr="व्हिटॅमिन C">Vitamin C</span>
+      <span class="nutrient-pill pill-rose" data-en="Folate" data-mr="फोलेट">Folate</span>
+      <span class="nutrient-pill pill-gold" data-en="Potassium" data-mr="पोटॅशियम">Potassium</span>
+      <span class="nutrient-pill pill-sage" data-en="Fibre" data-mr="फायबर">Fibre</span>
+      <span class="nutrient-pill pill-rose" data-en="Antioxidants" data-mr="अँटिऑक्सिडंट">Antioxidants</span>
     </div>
   </div>
-
-  <!-- VEGETABLES -->
 
   <div class="food-category">
     <div class="cat-header">
       <div class="cat-icon green">🥦</div>
       <div>
-        <div class="cat-name">Vegetables</div>
-        <div class="cat-note">Iron, Folate, Calcium, Vitamins A & K</div>
+        <div class="cat-name" data-en="Vegetables" data-mr="भाज्या">Vegetables</div>
+        <div class="cat-note" data-en="Iron, Folate, Calcium, Vitamins A & K" data-mr="लोह, फोलेट, कॅल्शियम, व्हिटॅमिन A आणि K">Iron, Folate, Calcium, Vitamins A & K</div>
       </div>
     </div>
     <div class="food-tags">
-      <span class="food-tag green-tag">🥦 Broccoli</span>
-      <span class="food-tag">🍠 Sweet Potato</span>
-      <span class="food-tag green-tag">🌿 Spinach</span>
-      <span class="food-tag">🥕 Carrot</span>
-      <span class="food-tag green-tag">🫑 Bell Pepper</span>
-      <span class="food-tag">🧅 Beetroot</span>
-      <span class="food-tag green-tag">🥗 Methi (Fenugreek leaves)</span>
-      <span class="food-tag">🌿 Moringa (Drumstick)</span>
-      <span class="food-tag green-tag">🥬 Kale / Amaranth (Chaulai)</span>
-      <span class="food-tag">🧄 Garlic</span>
-      <span class="food-tag green-tag">🫚 Bottle Gourd (Lauki)</span>
-      <span class="food-tag">🌽 Corn</span>
-      <span class="food-tag green-tag">🥒 Cucumber</span>
-      <span class="food-tag">🍅 Tomato</span>
-      <span class="food-tag green-tag">🫘 Green Peas</span>
-      <span class="food-tag">🧅 Onion</span>
-      <span class="food-tag green-tag">🌿 Coriander leaves</span>
-      <span class="food-tag">🥬 Cabbage</span>
-      <span class="food-tag rose-tag">🌿 Bathua (Chenopodium)</span>
-      <span class="food-tag">🍆 Pumpkin</span>
+      <span class="food-tag green-tag" data-en="🥦 Broccoli" data-mr="🥦 ब्रोकोली">🥦 Broccoli</span>
+      <span class="food-tag" data-en="🍠 Sweet Potato" data-mr="🍠 रताळे">🍠 Sweet Potato</span>
+      <span class="food-tag green-tag" data-en="🌿 Spinach" data-mr="🌿 पालक">🌿 Spinach</span>
+      <span class="food-tag" data-en="🥕 Carrot" data-mr="🥕 गाजर">🥕 Carrot</span>
+      <span class="food-tag green-tag" data-en="🫑 Bell Pepper" data-mr="🫑 सिमला मिरची">🫑 Bell Pepper</span>
+      <span class="food-tag" data-en="🧅 Beetroot" data-mr="🧅 बीटरूट">🧅 Beetroot</span>
+      <span class="food-tag green-tag" data-en="🥗 Methi (Fenugreek leaves)" data-mr="🥗 मेथी">🥗 Methi (Fenugreek)</span>
+      <span class="food-tag" data-en="🌿 Moringa (Drumstick)" data-mr="🌿 शेवगा">🌿 Moringa (Drumstick)</span>
+      <span class="food-tag green-tag" data-en="🥬 Kale / Amaranth" data-mr="🥬 चुकंदर / चवळीची पाने">🥬 Kale / Amaranth</span>
+      <span class="food-tag" data-en="🧄 Garlic" data-mr="🧄 लसूण">🧄 Garlic</span>
+      <span class="food-tag green-tag" data-en="🫚 Bottle Gourd (Lauki)" data-mr="🫚 दुधी भोपळा">🫚 Bottle Gourd (Lauki)</span>
+      <span class="food-tag" data-en="🌽 Corn" data-mr="🌽 मका">🌽 Corn</span>
+      <span class="food-tag green-tag" data-en="🥒 Cucumber" data-mr="🥒 काकडी">🥒 Cucumber</span>
+      <span class="food-tag" data-en="🍅 Tomato" data-mr="🍅 टोमॅटो">🍅 Tomato</span>
+      <span class="food-tag green-tag" data-en="🫘 Green Peas" data-mr="🫘 हिरवे वाटाणे">🫘 Green Peas</span>
+      <span class="food-tag" data-en="🍆 Pumpkin" data-mr="🍆 भोपळा">🍆 Pumpkin</span>
     </div>
     <div class="nutrient-row">
-      <span class="nutrient-pill pill-rose">Iron</span>
-      <span class="nutrient-pill pill-sage">Folate</span>
-      <span class="nutrient-pill pill-gold">Vitamin A</span>
-      <span class="nutrient-pill pill-sage">Vitamin K</span>
-      <span class="nutrient-pill pill-rose">Calcium</span>
+      <span class="nutrient-pill pill-rose" data-en="Iron" data-mr="लोह">Iron</span>
+      <span class="nutrient-pill pill-sage" data-en="Folate" data-mr="फोलेट">Folate</span>
+      <span class="nutrient-pill pill-gold" data-en="Vitamin A" data-mr="व्हिटॅमिन A">Vitamin A</span>
+      <span class="nutrient-pill pill-sage" data-en="Vitamin K" data-mr="व्हिटॅमिन K">Vitamin K</span>
+      <span class="nutrient-pill pill-rose" data-en="Calcium" data-mr="कॅल्शियम">Calcium</span>
     </div>
   </div>
-
-  <!-- NUTS & SEEDS -->
 
   <div class="food-category">
     <div class="cat-header">
       <div class="cat-icon brown">🌰</div>
       <div>
-        <div class="cat-name">Nuts & Seeds</div>
-        <div class="cat-note">Healthy fats, Protein, Omega-3, Zinc</div>
+        <div class="cat-name" data-en="Nuts & Seeds" data-mr="सुकामेवा आणि बिया">Nuts & Seeds</div>
+        <div class="cat-note" data-en="Healthy fats, Protein, Omega-3, Zinc" data-mr="निरोगी चरबी, प्रथिने, ओमेगा-३, झिंक">Healthy fats, Protein, Omega-3, Zinc</div>
       </div>
     </div>
     <div class="food-tags">
-      <span class="food-tag">🌰 Almonds (soaked)</span>
-      <span class="food-tag green-tag">🥜 Walnuts</span>
-      <span class="food-tag">🌻 Pumpkin Seeds</span>
-      <span class="food-tag green-tag">🌿 Flaxseeds</span>
-      <span class="food-tag">🌻 Sunflower Seeds</span>
-      <span class="food-tag green-tag">🫘 Chia Seeds</span>
-      <span class="food-tag">🥜 Peanuts</span>
-      <span class="food-tag green-tag">🌰 Cashews (moderate)</span>
-      <span class="food-tag">🍃 Sesame Seeds (Til)</span>
-      <span class="food-tag green-tag">🌿 Melon Seeds (Muskmelon)</span>
+      <span class="food-tag" data-en="🌰 Almonds (soaked)" data-mr="🌰 बदाम (भिजवलेले)">🌰 Almonds (soaked)</span>
+      <span class="food-tag green-tag" data-en="🥜 Walnuts" data-mr="🥜 अक्रोड">🥜 Walnuts</span>
+      <span class="food-tag" data-en="🌻 Pumpkin Seeds" data-mr="🌻 भोपळ्याच्या बिया">🌻 Pumpkin Seeds</span>
+      <span class="food-tag green-tag" data-en="🌿 Flaxseeds" data-mr="🌿 जवस">🌿 Flaxseeds</span>
+      <span class="food-tag" data-en="🌻 Sunflower Seeds" data-mr="🌻 सूर्यफुलाच्या बिया">🌻 Sunflower Seeds</span>
+      <span class="food-tag green-tag" data-en="🫘 Chia Seeds" data-mr="🫘 चिया बिया">🫘 Chia Seeds</span>
+      <span class="food-tag" data-en="🥜 Peanuts" data-mr="🥜 शेंगदाणे">🥜 Peanuts</span>
+      <span class="food-tag green-tag" data-en="🌰 Cashews (moderate)" data-mr="🌰 काजू (कमी प्रमाणात)">🌰 Cashews (moderate)</span>
+      <span class="food-tag" data-en="🍃 Sesame Seeds (Til)" data-mr="🍃 तीळ">🍃 Sesame Seeds (Til)</span>
     </div>
     <div class="nutrient-row">
-      <span class="nutrient-pill pill-gold">Omega-3</span>
-      <span class="nutrient-pill pill-sage">Healthy Fats</span>
-      <span class="nutrient-pill pill-rose">Zinc</span>
-      <span class="nutrient-pill pill-gold">Magnesium</span>
-      <span class="nutrient-pill pill-sage">Vitamin E</span>
+      <span class="nutrient-pill pill-gold" data-en="Omega-3" data-mr="ओमेगा-३">Omega-3</span>
+      <span class="nutrient-pill pill-sage" data-en="Healthy Fats" data-mr="निरोगी चरबी">Healthy Fats</span>
+      <span class="nutrient-pill pill-rose" data-en="Zinc" data-mr="झिंक">Zinc</span>
+      <span class="nutrient-pill pill-gold" data-en="Magnesium" data-mr="मॅग्नेशियम">Magnesium</span>
     </div>
   </div>
-
-  <!-- GRAINS & LEGUMES -->
 
   <div class="food-category">
     <div class="cat-header">
       <div class="cat-icon yellow">🌾</div>
       <div>
-        <div class="cat-name">Grains, Legumes & Lentils</div>
-        <div class="cat-note">Protein, Complex Carbs, Iron, Fibre</div>
+        <div class="cat-name" data-en="Grains, Legumes & Lentils" data-mr="धान्ये, कडधान्ये आणि डाळी">Grains, Legumes & Lentils</div>
+        <div class="cat-note" data-en="Protein, Complex Carbs, Iron, Fibre" data-mr="प्रथिने, जटिल कर्बोदके, लोह, फायबर">Protein, Complex Carbs, Iron, Fibre</div>
       </div>
     </div>
     <div class="food-tags">
-      <span class="food-tag">🌾 Whole Wheat Roti</span>
-      <span class="food-tag green-tag">🍚 Brown Rice</span>
-      <span class="food-tag">🫘 Moong Dal (split mung)</span>
-      <span class="food-tag green-tag">🫘 Masoor Dal (red lentil)</span>
-      <span class="food-tag">🫘 Chana Dal</span>
-      <span class="food-tag green-tag">🫘 Rajma (kidney beans)</span>
-      <span class="food-tag">🫘 Black Chana</span>
-      <span class="food-tag green-tag">🌾 Oats</span>
-      <span class="food-tag">🌾 Millets (Ragi, Jowar, Bajra)</span>
-      <span class="food-tag green-tag">🫘 Sprouted moong</span>
-      <span class="food-tag">🌾 Quinoa</span>
-      <span class="food-tag green-tag">🫘 Tofu / Soy</span>
+      <span class="food-tag" data-en="🌾 Whole Wheat Roti" data-mr="🌾 गव्हाची भाकरी/रोटी">🌾 Whole Wheat Roti</span>
+      <span class="food-tag green-tag" data-en="🍚 Brown Rice" data-mr="🍚 तपकिरी तांदूळ">🍚 Brown Rice</span>
+      <span class="food-tag" data-en="🫘 Moong Dal" data-mr="🫘 मूग डाळ">🫘 Moong Dal</span>
+      <span class="food-tag green-tag" data-en="🫘 Masoor Dal (red lentil)" data-mr="🫘 मसूर डाळ">🫘 Masoor Dal</span>
+      <span class="food-tag" data-en="🫘 Chana Dal" data-mr="🫘 चणा डाळ">🫘 Chana Dal</span>
+      <span class="food-tag green-tag" data-en="🫘 Rajma (kidney beans)" data-mr="🫘 राजमा">🫘 Rajma</span>
+      <span class="food-tag" data-en="🌾 Oats" data-mr="🌾 ओट्स">🌾 Oats</span>
+      <span class="food-tag green-tag" data-en="🌾 Millets (Ragi, Jowar, Bajra)" data-mr="🌾 नाचणी, ज्वारी, बाजरी">🌾 Millets (Ragi, Jowar, Bajra)</span>
+      <span class="food-tag" data-en="🫘 Sprouted Moong" data-mr="🫘 मोड आलेले मूग">🫘 Sprouted Moong</span>
+      <span class="food-tag green-tag" data-en="🌾 Quinoa" data-mr="🌾 क्विनोआ">🌾 Quinoa</span>
     </div>
     <div class="nutrient-row">
-      <span class="nutrient-pill pill-rose">Protein</span>
-      <span class="nutrient-pill pill-sage">Complex Carbs</span>
-      <span class="nutrient-pill pill-rose">Iron</span>
-      <span class="nutrient-pill pill-gold">Fibre</span>
-      <span class="nutrient-pill pill-sage">B Vitamins</span>
+      <span class="nutrient-pill pill-rose" data-en="Protein" data-mr="प्रथिने">Protein</span>
+      <span class="nutrient-pill pill-sage" data-en="Complex Carbs" data-mr="जटिल कर्बोदके">Complex Carbs</span>
+      <span class="nutrient-pill pill-rose" data-en="Iron" data-mr="लोह">Iron</span>
+      <span class="nutrient-pill pill-gold" data-en="Fibre" data-mr="फायबर">Fibre</span>
     </div>
   </div>
-
-  <!-- DAIRY -->
 
   <div class="food-category">
     <div class="cat-header">
       <div class="cat-icon blue">🥛</div>
       <div>
-        <div class="cat-name">Dairy & Calcium Sources</div>
-        <div class="cat-note">Calcium, Vitamin D, Protein, Probiotics</div>
+        <div class="cat-name" data-en="Dairy & Calcium Sources" data-mr="दुग्धजन्य पदार्थ आणि कॅल्शियमचे स्रोत">Dairy & Calcium Sources</div>
+        <div class="cat-note" data-en="Calcium, Vitamin D, Protein, Probiotics" data-mr="कॅल्शियम, व्हिटॅमिन D, प्रथिने, प्रोबायोटिक्स">Calcium, Vitamin D, Protein, Probiotics</div>
       </div>
     </div>
     <div class="food-tags">
-      <span class="food-tag blue-tag">🥛 Full-fat Milk</span>
-      <span class="food-tag">🧀 Paneer (cottage cheese)</span>
-      <span class="food-tag blue-tag">🥛 Dahi (curd / yogurt)</span>
-      <span class="food-tag">🧈 Ghee (clarified butter)</span>
-      <span class="food-tag blue-tag">🥛 Buttermilk (chaas)</span>
-      <span class="food-tag">🍦 Khichdi with ghee</span>
+      <span class="food-tag blue-tag" data-en="🥛 Full-fat Milk" data-mr="🥛 पूर्ण चरबीचे दूध">🥛 Full-fat Milk</span>
+      <span class="food-tag" data-en="🧀 Paneer (cottage cheese)" data-mr="🧀 पनीर">🧀 Paneer</span>
+      <span class="food-tag blue-tag" data-en="🥛 Dahi (curd / yogurt)" data-mr="🥛 दही">🥛 Dahi (curd)</span>
+      <span class="food-tag" data-en="🧈 Ghee (clarified butter)" data-mr="🧈 तूप">🧈 Ghee</span>
+      <span class="food-tag blue-tag" data-en="🥛 Buttermilk (Chaas)" data-mr="🥛 ताक">🥛 Buttermilk (Chaas)</span>
     </div>
     <div class="nutrient-row">
-      <span class="nutrient-pill pill-rose">Calcium</span>
-      <span class="nutrient-pill pill-gold">Vitamin D</span>
-      <span class="nutrient-pill pill-sage">Probiotics</span>
-      <span class="nutrient-pill pill-rose">Protein</span>
+      <span class="nutrient-pill pill-rose" data-en="Calcium" data-mr="कॅल्शियम">Calcium</span>
+      <span class="nutrient-pill pill-gold" data-en="Vitamin D" data-mr="व्हिटॅमिन D">Vitamin D</span>
+      <span class="nutrient-pill pill-sage" data-en="Probiotics" data-mr="प्रोबायोटिक्स">Probiotics</span>
+      <span class="nutrient-pill pill-rose" data-en="Protein" data-mr="प्रथिने">Protein</span>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ NUTRIENTS ═══════════════════════════════════ -->
-
+<!-- ═══════════════════ NUTRIENTS ═══════════════════ -->
 <section id="nutrients" class="section">
-  <p class="section-title">Key Nutrients in Month 5</p>
-  <p class="section-sub">Baby's bones, brain, and muscles grow rapidly — these are your critical nutrients</p>
-
+  <p class="section-title" data-en="Key Nutrients" data-mr="महत्त्वाची पोषणद्रव्ये">Key Nutrients</p>
+  <p class="section-sub" data-en="Baby's bones, brain, and muscles grow rapidly — these are your critical nutrients" data-mr="बाळाची हाडे, मेंदू आणि स्नायू वेगाने वाढत आहेत — या आवश्यक पोषणद्रव्यांकडे लक्ष द्या">Baby's bones, brain, and muscles grow rapidly — these are your critical nutrients</p>
   <div class="info-grid">
-    <div class="info-card">
-      <div class="info-icon">🩸</div>
-      <div class="info-name">Iron</div>
-      <div class="info-why">Prevents anaemia; supports baby's blood development and oxygen delivery</div>
-      <div class="info-amount">27 mg/day · Spinach, Rajma, Ragi, Moringa</div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">🦴</div>
-      <div class="info-name">Calcium</div>
-      <div class="info-why">Baby's bones and teeth are forming rapidly. Low intake pulls calcium from your own bones</div>
-      <div class="info-amount">1000 mg/day · Milk, Paneer, Sesame, Ragi</div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">🧬</div>
-      <div class="info-name">Folate / Folic Acid</div>
-      <div class="info-why">Critical for neural tube development; reduces birth defect risk</div>
-      <div class="info-amount">600 mcg/day · Spinach, Broccoli, Moong dal</div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">💪</div>
-      <div class="info-name">Protein</div>
-      <div class="info-why">Baby's muscles, organs, and tissues need amino acids constantly</div>
-      <div class="info-amount">75–100 g/day · Dal, Paneer, Dahi, Tofu, Nuts</div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">🧠</div>
-      <div class="info-name">Omega-3 (DHA)</div>
-      <div class="info-why">Baby's brain and eye development; reduces preterm birth risk</div>
-      <div class="info-amount">200 mg/day · Walnuts, Flaxseeds, Chia</div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">☀️</div>
-      <div class="info-name">Vitamin D</div>
-      <div class="info-why">Helps absorb calcium; supports immune system for both mother and baby</div>
-      <div class="info-amount">600 IU/day · Sunlight, Milk, Ghee</div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">🍊</div>
-      <div class="info-name">Vitamin C</div>
-      <div class="info-why">Boosts iron absorption; builds baby's skin and connective tissue</div>
-      <div class="info-amount">85 mg/day · Amla, Orange, Bell Pepper, Guava</div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">🥕</div>
-      <div class="info-name">Vitamin A</div>
-      <div class="info-why">Baby's vision, immune system and cell growth; good for skin</div>
-      <div class="info-amount">770 mcg/day · Carrot, Sweet Potato, Pumpkin</div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">🌿</div>
-      <div class="info-name">Fibre</div>
-      <div class="info-why">Prevents constipation (very common in pregnancy); controls blood sugar</div>
-      <div class="info-amount">28 g/day · Oats, Vegetables, Fruits, Dal</div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">💧</div>
-      <div class="info-name">Water & Hydration</div>
-      <div class="info-why">Amniotic fluid, blood volume, and kidney function all depend on good hydration</div>
-      <div class="info-amount">2.5–3 L/day · Water, Coconut water, Chaas</div>
-    </div>
+    <div class="info-card"><div class="info-icon">🩸</div><div class="info-name" data-en="Iron" data-mr="लोह">Iron</div><div class="info-why" data-en="Prevents anaemia; supports baby's blood development and oxygen delivery" data-mr="अशक्तपणा रोखते; बाळाच्या रक्त निर्मितीस आणि ऑक्सिजन पुरवठ्यास मदत करते">Prevents anaemia; supports baby's blood development and oxygen delivery</div><div class="info-amount" data-en="27 mg/day · Spinach, Rajma, Ragi, Moringa" data-mr="२७ मिग्रॅ/दिवस · पालक, राजमा, नाचणी, शेवगा">27 mg/day · Spinach, Rajma, Ragi, Moringa</div></div>
+    <div class="info-card"><div class="info-icon">🦴</div><div class="info-name" data-en="Calcium" data-mr="कॅल्शियम">Calcium</div><div class="info-why" data-en="Baby's bones and teeth are forming rapidly. Low intake pulls calcium from your own bones" data-mr="बाळाची हाडे आणि दात वेगाने तयार होत आहेत. कमी सेवनाने आईच्या हाडातून कॅल्शियम कमी होते">Baby's bones and teeth are forming rapidly</div><div class="info-amount" data-en="1000 mg/day · Milk, Paneer, Sesame, Ragi" data-mr="१००० मिग्रॅ/दिवस · दूध, पनीर, तीळ, नाचणी">1000 mg/day · Milk, Paneer, Sesame, Ragi</div></div>
+    <div class="info-card"><div class="info-icon">🧬</div><div class="info-name" data-en="Folate / Folic Acid" data-mr="फोलेट / फॉलिक ॲसिड">Folate / Folic Acid</div><div class="info-why" data-en="Critical for neural tube development; reduces birth defect risk" data-mr="मज्जासंस्थेच्या विकासासाठी अत्यंत महत्त्वाचे; जन्म दोषांचा धोका कमी करते">Critical for neural tube development</div><div class="info-amount" data-en="600 mcg/day · Spinach, Broccoli, Moong dal" data-mr="६०० मायक्रोग्रॅम/दिवस · पालक, ब्रोकोली, मूग डाळ">600 mcg/day · Spinach, Broccoli, Moong dal</div></div>
+    <div class="info-card"><div class="info-icon">💪</div><div class="info-name" data-en="Protein" data-mr="प्रथिने">Protein</div><div class="info-why" data-en="Baby's muscles, organs, and tissues need amino acids constantly" data-mr="बाळाच्या स्नायू, अवयव आणि ऊतींना सतत अमीनो ॲसिडची गरज असते">Baby's muscles, organs, and tissues need amino acids</div><div class="info-amount" data-en="75–100 g/day · Dal, Paneer, Dahi, Tofu, Nuts" data-mr="७५-१०० ग्रॅम/दिवस · डाळ, पनीर, दही, टोफू, सुकामेवा">75–100 g/day · Dal, Paneer, Dahi, Nuts</div></div>
+    <div class="info-card"><div class="info-icon">🧠</div><div class="info-name" data-en="Omega-3 (DHA)" data-mr="ओमेगा-३ (DHA)">Omega-3 (DHA)</div><div class="info-why" data-en="Baby's brain and eye development; reduces preterm birth risk" data-mr="बाळाचा मेंदू आणि डोळ्यांचा विकास; अकाली प्रसूतीचा धोका कमी करते">Baby's brain and eye development</div><div class="info-amount" data-en="200 mg/day · Walnuts, Flaxseeds, Chia" data-mr="२०० मिग्रॅ/दिवस · अक्रोड, जवस, चिया">200 mg/day · Walnuts, Flaxseeds, Chia</div></div>
+    <div class="info-card"><div class="info-icon">☀️</div><div class="info-name" data-en="Vitamin D" data-mr="व्हिटॅमिन D">Vitamin D</div><div class="info-why" data-en="Helps absorb calcium; supports immune system for both mother and baby" data-mr="कॅल्शियम शोषण्यास मदत करते; आई आणि बाळ दोघांच्या रोगप्रतिकारशक्तीस समर्थन देते">Helps absorb calcium; supports immune system</div><div class="info-amount" data-en="600 IU/day · Sunlight, Milk, Ghee" data-mr="६०० IU/दिवस · सूर्यप्रकाश, दूध, तूप">600 IU/day · Sunlight, Milk, Ghee</div></div>
+    <div class="info-card"><div class="info-icon">🍊</div><div class="info-name" data-en="Vitamin C" data-mr="व्हिटॅमिन C">Vitamin C</div><div class="info-why" data-en="Boosts iron absorption; builds baby's skin and connective tissue" data-mr="लोह शोषण वाढवते; बाळाची त्वचा आणि संयोजी ऊती तयार करते">Boosts iron absorption; builds baby's skin</div><div class="info-amount" data-en="85 mg/day · Amla, Orange, Bell Pepper, Guava" data-mr="८५ मिग्रॅ/दिवस · आवळा, संत्री, सिमला मिरची, पेरू">85 mg/day · Amla, Orange, Guava</div></div>
+    <div class="info-card"><div class="info-icon">💧</div><div class="info-name" data-en="Hydration" data-mr="हायड्रेशन">Hydration</div><div class="info-why" data-en="Amniotic fluid, blood volume, and kidney function depend on good hydration" data-mr="अम्नीओटिक द्रव, रक्ताचे प्रमाण आणि मूत्रपिंडाचे कार्य चांगल्या हायड्रेशनवर अवलंबून असते">Amniotic fluid, blood volume, kidney function</div><div class="info-amount" data-en="2.5–3 L/day · Water, Coconut water, Chaas" data-mr="२.५-३ लि/दिवस · पाणी, नारळ पाणी, ताक">2.5–3 L/day · Water, Coconut water, Chaas</div></div>
+    <div class="info-card"><div class="info-icon">🌿</div><div class="info-name" data-en="Fibre" data-mr="फायबर">Fibre</div><div class="info-why" data-en="Prevents constipation (very common in pregnancy); controls blood sugar" data-mr="बद्धकोष्ठता रोखते (गर्भावस्थेत खूप सामान्य); रक्तातील साखर नियंत्रित करते">Prevents constipation; controls blood sugar</div><div class="info-amount" data-en="28 g/day · Oats, Vegetables, Fruits, Dal" data-mr="२८ ग्रॅम/दिवस · ओट्स, भाज्या, फळे, डाळ">28 g/day · Oats, Vegetables, Fruits, Dal</div></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ MEAL PLAN ═══════════════════════════════════ -->
-
+<!-- ═══════════════════ MEAL PLAN ═══════════════════ -->
 <section id="mealplan" class="section">
-  <p class="section-title">Complete Daily Meal Plan</p>
-  <p class="section-sub">A full day plan from waking up to bedtime — vegetarian, balanced, and pregnancy-optimised</p>
+  <p class="section-title" data-en="Complete Daily Meal Plan" data-mr="संपूर्ण दैनंदिन जेवण योजना">Complete Daily Meal Plan</p>
+  <p class="section-sub" data-en="A full day plan from waking up to bedtime — vegetarian, balanced, and pregnancy-optimised" data-mr="झोपेतून उठण्यापासून झोपण्यापर्यंत संपूर्ण दिवसाची योजना — शाकाहारी, संतुलित आणि गर्भावस्थेसाठी अनुकूल">Full day plan — vegetarian, balanced, pregnancy-optimised</p>
 
-  <div class="day-header">🌅 Full Day Plan — 5th Month Pregnancy</div>
+  <div class="day-header" data-en="🌅 Full Day Plan — Prajakta's Nutrition Schedule" data-mr="🌅 संपूर्ण दिवसाची योजना — प्राजक्ताचे पोषण वेळापत्रक">🌅 Full Day Plan — Prajakta's Nutrition Schedule</div>
   <div class="meal-timeline">
-
-```
-<div class="meal-row">
-  <div class="meal-time"><span class="time-label">On waking</span><span class="time-value">6:30 AM</span></div>
-  <div class="meal-dot dot-morning"></div>
-  <div class="meal-content">
-    <div class="meal-name">Morning Ritual Drink</div>
-    <div class="meal-desc">5–6 soaked almonds + 2 walnuts + 1 glass warm water with lemon & honey OR a glass of warm milk with a pinch of turmeric and saffron</div>
-    <div class="meal-benefits">
-      <span class="benefit-chip chip-green">Omega-3</span>
-      <span class="benefit-chip chip-orange">Vitamin C</span>
-      <span class="benefit-chip chip-purple">Hydration</span>
+    <div class="meal-row">
+      <div class="meal-time"><span class="time-label" data-en="On waking" data-mr="उठल्यावर">On waking</span><span class="time-value">6:30 AM</span></div>
+      <div class="meal-dot dot-morning"></div>
+      <div class="meal-content">
+        <div class="meal-name" data-en="Morning Ritual Drink" data-mr="सकाळचे पेय">Morning Ritual Drink</div>
+        <div class="meal-desc" data-en="5–6 soaked almonds + 2 walnuts + 1 glass warm water with lemon & honey OR warm milk with turmeric and saffron" data-mr="५-६ भिजवलेले बदाम + २ अक्रोड + १ ग्लास कोमट पाणी लिंबू व मध मिसळून किंवा हळद-केसर घातलेले कोमट दूध">5–6 soaked almonds + 2 walnuts + warm water with lemon & honey OR turmeric milk with saffron</div>
+        <div class="meal-benefits"><span class="benefit-chip chip-green">Omega-3</span><span class="benefit-chip chip-orange">Vitamin C</span><span class="benefit-chip chip-purple" data-en="Hydration" data-mr="हायड्रेशन">Hydration</span></div>
+      </div>
+    </div>
+    <div class="meal-row">
+      <div class="meal-time"><span class="time-label" data-en="Breakfast" data-mr="सकाळचे जेवण">Breakfast</span><span class="time-value">8:00 AM</span></div>
+      <div class="meal-dot dot-morning"></div>
+      <div class="meal-content">
+        <div class="meal-name" data-en="Vegetable Oats Upma + Fruit Bowl + Milk" data-mr="भाज्यांचा ओट्स उपमा + फळांचा वाटी + दूध">Vegetable Oats Upma + Fruit Bowl + Milk</div>
+        <div class="meal-desc" data-en="Oats cooked with spinach, carrot, peas + banana, pomegranate & kiwi + 1 glass full-fat milk" data-mr="पालक, गाजर, वाटाण्यांसह शिजवलेले ओट्स + केळे, डाळिंब आणि कीवी + १ ग्लास संपूर्ण दूध">Oats with spinach, carrot, peas + banana, pomegranate & kiwi + full-fat milk</div>
+        <div class="meal-benefits"><span class="benefit-chip chip-green">Protein</span><span class="benefit-chip chip-blue">Iron & Folate</span><span class="benefit-chip chip-orange">Calcium</span></div>
+      </div>
+    </div>
+    <div class="meal-row">
+      <div class="meal-time"><span class="time-label" data-en="Mid-Morning" data-mr="सकाळी">Mid-Morning</span><span class="time-value">10:30 AM</span></div>
+      <div class="meal-dot dot-snack"></div>
+      <div class="meal-content">
+        <div class="meal-name" data-en="Fruit + Nut Snack" data-mr="फळे + सुकामेवा नाश्ता">Fruit + Nut Snack</div>
+        <div class="meal-desc" data-en="1 apple or guava + mixed seeds (pumpkin + sunflower + sesame)" data-mr="१ सफरचंद किंवा पेरू + मिश्रित बिया (भोपळा + सूर्यफूल + तीळ)">1 apple or guava + mixed seeds</div>
+        <div class="meal-benefits"><span class="benefit-chip chip-green">Zinc</span><span class="benefit-chip chip-orange">Vitamin C</span></div>
+      </div>
+    </div>
+    <div class="meal-row">
+      <div class="meal-time"><span class="time-label" data-en="Lunch" data-mr="दुपारचे जेवण">Lunch</span><span class="time-value">1:00 PM</span></div>
+      <div class="meal-dot dot-noon"></div>
+      <div class="meal-content">
+        <div class="meal-name" data-en="Full Thali — Roti + Dal + Sabzi + Rice + Salad + Curd" data-mr="संपूर्ण थाळी — रोटी + डाळ + भाजी + भात + सॅलड + दही">Full Thali — Roti + Dal + Sabzi + Rice + Salad + Curd</div>
+        <div class="meal-desc" data-en="2 whole wheat rotis + moong/masoor dal + sabzi (palak paneer / methi aloo / lauki) + brown rice + salad + dahi" data-mr="२ गव्हाची रोटी + मूग/मसूर डाळ + भाजी (पालक पनीर/मेथी आलू/दुधी) + तपकिरी तांदूळ + सॅलड + दही">2 rotis + dal + sabzi + brown rice + raw salad + dahi</div>
+        <div class="meal-benefits"><span class="benefit-chip chip-green">Complete Protein</span><span class="benefit-chip chip-blue">Iron</span><span class="benefit-chip chip-orange">Calcium</span></div>
+      </div>
+    </div>
+    <div class="meal-row">
+      <div class="meal-time"><span class="time-label" data-en="Post-Lunch" data-mr="दुपारनंतर">Post-Lunch</span><span class="time-value">2:00 PM</span></div>
+      <div class="meal-dot dot-snack"></div>
+      <div class="meal-content">
+        <div class="meal-name" data-en="Coconut Water or Chaas" data-mr="नारळ पाणी किंवा ताक">Coconut Water or Chaas</div>
+        <div class="meal-desc" data-en="1 glass fresh coconut water OR spiced chaas with cumin and coriander" data-mr="१ ग्लास ताजे नारळ पाणी किंवा जिरे-कोथिंबीर घातलेले ताक">1 glass coconut water OR spiced chaas</div>
+        <div class="meal-benefits"><span class="benefit-chip chip-blue">Electrolytes</span><span class="benefit-chip chip-purple" data-en="Digestion" data-mr="पचन">Digestion</span></div>
+      </div>
+    </div>
+    <div class="meal-row">
+      <div class="meal-time"><span class="time-label" data-en="Evening" data-mr="संध्याकाळी">Evening</span><span class="time-value">5:00 PM</span></div>
+      <div class="meal-dot dot-evening"></div>
+      <div class="meal-content">
+        <div class="meal-name" data-en="Evening Snack" data-mr="संध्याकाळचा नाश्ता">Evening Snack</div>
+        <div class="meal-desc" data-en="Ragi laddoo (1–2) + 1 cup herbal tea (ginger or fennel, no caffeine) OR sprouted moong chaat" data-mr="नाचणी लाडू (१-२) + १ कप हर्बल चहा (आले किंवा बडीशेप, कॅफेन नाही) किंवा मोड आलेले मूग चाट">Ragi laddoo + herbal tea OR sprouted moong chaat</div>
+        <div class="meal-benefits"><span class="benefit-chip chip-orange">Calcium</span><span class="benefit-chip chip-green">Protein</span></div>
+      </div>
+    </div>
+    <div class="meal-row">
+      <div class="meal-time"><span class="time-label" data-en="Dinner" data-mr="रात्रीचे जेवण">Dinner</span><span class="time-value">7:30 PM</span></div>
+      <div class="meal-dot dot-night"></div>
+      <div class="meal-content">
+        <div class="meal-name" data-en="Moong Dal Khichdi with Vegetables" data-mr="मूग डाळ खिचडी भाज्यांसह">Moong Dal Khichdi with Vegetables</div>
+        <div class="meal-desc" data-en="Light khichdi with moong dal, rice, carrot, peas, spinach + tsp of ghee + curd" data-mr="मूग डाळ, तांदूळ, गाजर, वाटाणे, पालकांसह हलकी खिचडी + एक चमचा तूप + दही">Light khichdi with moong dal, vegetables + ghee + curd</div>
+        <div class="meal-benefits"><span class="benefit-chip chip-green">Easy Digestible</span><span class="benefit-chip chip-orange">Protein</span></div>
+      </div>
+    </div>
+    <div class="meal-row">
+      <div class="meal-time"><span class="time-label" data-en="Before Bed" data-mr="झोपण्यापूर्वी">Before Bed</span><span class="time-value">9:30 PM</span></div>
+      <div class="meal-dot dot-night"></div>
+      <div class="meal-content">
+        <div class="meal-name" data-en="Haldi Doodh (Golden Milk)" data-mr="हळद दूध (गोल्डन मिल्क)">Haldi Doodh (Golden Milk)</div>
+        <div class="meal-desc" data-en="1 glass warm full-fat milk with ½ tsp turmeric, a pinch of black pepper and saffron" data-mr="१ ग्लास कोमट संपूर्ण दूध + अर्धा चमचा हळद + एक चिमूट काळी मिरी आणि केशर">1 glass warm milk with turmeric, black pepper and saffron</div>
+        <div class="meal-benefits"><span class="benefit-chip chip-orange">Calcium</span><span class="benefit-chip chip-green">Anti-inflammatory</span><span class="benefit-chip chip-purple" data-en="Deep Sleep" data-mr="गाढ झोप">Deep Sleep</span></div>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="meal-row">
-  <div class="meal-time"><span class="time-label">Breakfast</span><span class="time-value">8:00 AM</span></div>
-  <div class="meal-dot dot-morning"></div>
-  <div class="meal-content">
-    <div class="meal-name">Vegetable Oats Upma + Fruit Bowl + Milk</div>
-    <div class="meal-desc">Oats cooked with spinach, carrot, peas, and mild spices + a bowl of banana, pomegranate & kiwi + 1 glass full-fat milk</div>
-    <div class="meal-benefits">
-      <span class="benefit-chip chip-green">Protein</span>
-      <span class="benefit-chip chip-blue">Iron & Folate</span>
-      <span class="benefit-chip chip-orange">Calcium</span>
-      <span class="benefit-chip chip-purple">Fibre</span>
-    </div>
-  </div>
-</div>
-
-<div class="meal-row">
-  <div class="meal-time"><span class="time-label">Mid-Morning</span><span class="time-value">10:30 AM</span></div>
-  <div class="meal-dot dot-snack"></div>
-  <div class="meal-content">
-    <div class="meal-name">Fruit + Nut Snack</div>
-    <div class="meal-desc">1 apple or guava OR 1 small bowl of pomegranate seeds + a handful of mixed seeds (pumpkin + sunflower + sesame)</div>
-    <div class="meal-benefits">
-      <span class="benefit-chip chip-green">Zinc</span>
-      <span class="benefit-chip chip-orange">Vitamin C</span>
-      <span class="benefit-chip chip-purple">Antioxidants</span>
-    </div>
-  </div>
-</div>
-
-<div class="meal-row">
-  <div class="meal-time"><span class="time-label">Lunch</span><span class="time-value">1:00 PM</span></div>
-  <div class="meal-dot dot-noon"></div>
-  <div class="meal-content">
-    <div class="meal-name">Full Thali — Roti + Dal + Sabzi + Rice + Salad + Curd</div>
-    <div class="meal-desc">2 whole wheat rotis + 1 bowl moong/masoor dal + 1 sabzi (palak paneer OR methi aloo OR lauki) + ½ cup brown rice + raw salad (carrot, cucumber, beetroot) + 1 bowl dahi</div>
-    <div class="meal-benefits">
-      <span class="benefit-chip chip-green">Complete Protein</span>
-      <span class="benefit-chip chip-blue">Iron</span>
-      <span class="benefit-chip chip-orange">Calcium</span>
-      <span class="benefit-chip chip-purple">Folate</span>
-    </div>
-  </div>
-</div>
-
-<div class="meal-row">
-  <div class="meal-time"><span class="time-label">Post-Lunch</span><span class="time-value">2:00 PM</span></div>
-  <div class="meal-dot dot-snack"></div>
-  <div class="meal-content">
-    <div class="meal-name">Coconut Water or Chaas (Buttermilk)</div>
-    <div class="meal-desc">1 glass fresh coconut water OR spiced chaas (buttermilk with cumin and coriander). Rest for 20–30 minutes</div>
-    <div class="meal-benefits">
-      <span class="benefit-chip chip-blue">Electrolytes</span>
-      <span class="benefit-chip chip-purple">Digestion</span>
-    </div>
-  </div>
-</div>
-
-<div class="meal-row">
-  <div class="meal-time"><span class="time-label">Evening Snack</span><span class="time-value">4:30 PM</span></div>
-  <div class="meal-dot dot-evening"></div>
-  <div class="meal-content">
-    <div class="meal-name">Sprouted Moong Chaat OR Ragi Ladoo + Milk</div>
-    <div class="meal-desc">1 small bowl sprouted moong chaat with lemon, tomato, cucumber & mild spices OR 1–2 ragi-peanut ladoos with a small cup warm milk</div>
-    <div class="meal-benefits">
-      <span class="benefit-chip chip-green">Protein</span>
-      <span class="benefit-chip chip-orange">Calcium</span>
-      <span class="benefit-chip chip-blue">Iron</span>
-    </div>
-  </div>
-</div>
-
-<div class="meal-row">
-  <div class="meal-time"><span class="time-label">Dinner</span><span class="time-value">7:30 PM</span></div>
-  <div class="meal-dot dot-night"></div>
-  <div class="meal-content">
-    <div class="meal-name">Light Dal Khichdi + Sabzi + Salad</div>
-    <div class="meal-desc">Moong dal khichdi (rice + dal + ghee + vegetables) + 1 sabzi (pumpkin, sweet potato, or spinach stir fry) + light salad + 1 tsp ghee on top</div>
-    <div class="meal-benefits">
-      <span class="benefit-chip chip-green">Easily Digestible</span>
-      <span class="benefit-chip chip-orange">Protein</span>
-      <span class="benefit-chip chip-purple">Comfort Food</span>
-    </div>
-  </div>
-</div>
-
-<div class="meal-row">
-  <div class="meal-time"><span class="time-label">Before Bed</span><span class="time-value">9:30 PM</span></div>
-  <div class="meal-dot dot-night"></div>
-  <div class="meal-content">
-    <div class="meal-name">Haldi Doodh (Golden Milk)</div>
-    <div class="meal-desc">1 glass warm full-fat milk with ½ tsp turmeric, a pinch of black pepper, and a few strands of saffron. Optional: small handful of soaked raisins</div>
-    <div class="meal-benefits">
-      <span class="benefit-chip chip-orange">Calcium</span>
-      <span class="benefit-chip chip-green">Anti-inflammatory</span>
-      <span class="benefit-chip chip-purple">Deep Sleep</span>
-    </div>
-  </div>
-</div>
-```
-
-  </div>
-
   <div class="tip-box">
-    <h4>💧 Daily Hydration Goal</h4>
-    <p>Aim for 2.5–3 litres of fluid per day: plain water, coconut water, chaas, fresh juice, and herbal teas (ginger, fennel). Avoid cold drinks and packaged juices.</p>
+    <h4 data-en="💧 Daily Hydration Goal" data-mr="💧 दैनंदिन हायड्रेशन लक्ष्य">💧 Daily Hydration Goal</h4>
+    <p data-en="Aim for 2.5–3 litres of fluid per day: plain water, coconut water, chaas, fresh juice, and herbal teas (ginger, fennel). Avoid cold drinks and packaged juices." data-mr="दररोज २.५-३ लिटर द्रव पिण्याचे लक्ष्य ठेवा: साधे पाणी, नारळ पाणी, ताक, ताजा रस आणि हर्बल चहा (आले, बडीशेप). थंड पेये आणि पॅकेज केलेले ज्यूस टाळा.">Aim for 2.5–3 litres of fluid per day: plain water, coconut water, chaas, fresh juice, and herbal teas. Avoid cold drinks and packaged juices.</p>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ RECIPES ═══════════════════════════════════ -->
-
+<!-- ═══════════════════ RECIPES ═══════════════════ -->
 <section id="recipes" class="section">
-  <p class="section-title">Pregnancy-Safe Recipes</p>
-  <p class="section-sub">Simple, nutritious, vegetarian recipes designed for each meal of the day</p>
-
-  <!-- RECIPE 1 -->
+  <p class="section-title" data-en="Pregnancy-Safe Recipes" data-mr="गर्भावस्थेत सुरक्षित पाककृती">Pregnancy-Safe Recipes</p>
+  <p class="section-sub" data-en="Simple, nutritious, vegetarian recipes for each meal of the day" data-mr="दिवसाच्या प्रत्येक जेवणासाठी सोप्या, पौष्टिक, शाकाहारी पाककृती">Simple, nutritious, vegetarian recipes for each meal</p>
 
   <div class="recipe-card">
-    <div class="recipe-header">
-      <div>
-        <div class="recipe-title">Palak Paneer (Spinach & Cottage Cheese Curry)</div>
-        <div class="recipe-meta">Serves 2 · 30 minutes · Lunch / Dinner</div>
-        <div class="recipe-badges">
-          <span class="recipe-badge badge-veg">Vegetarian</span>
-          <span class="recipe-badge badge-protein">High Protein</span>
-          <span class="recipe-badge badge-iron">Iron Rich</span>
-          <span class="recipe-badge badge-calcium">Calcium</span>
-          <span class="recipe-badge badge-folate">Folate</span>
-        </div>
-      </div>
-    </div>
+    <div class="recipe-header"><div>
+      <div class="recipe-title" data-en="Palak Paneer" data-mr="पालक पनीर">Palak Paneer</div>
+      <div class="recipe-meta" data-en="Serves 2 · 30 minutes · Lunch / Dinner" data-mr="२ जणांसाठी · ३० मिनिटे · दुपार / रात्र">Serves 2 · 30 minutes · Lunch / Dinner</div>
+      <div class="recipe-badges"><span class="recipe-badge badge-veg" data-en="Vegetarian" data-mr="शाकाहारी">Vegetarian</span><span class="recipe-badge badge-protein">High Protein</span><span class="recipe-badge badge-iron">Iron Rich</span><span class="recipe-badge badge-calcium">Calcium</span></div>
+    </div></div>
     <div class="recipe-body">
       <div class="ingredients-col">
-        <div class="col-title">Ingredients</div>
+        <div class="col-title" data-en="Ingredients" data-mr="साहित्य">Ingredients</div>
         <ul class="ingredient-list">
-          <li>250g fresh spinach leaves</li>
-          <li>200g paneer, cubed</li>
-          <li>1 medium onion, chopped</li>
-          <li>2 medium tomatoes, chopped</li>
-          <li>1 tbsp ghee</li>
-          <li>1 tsp cumin seeds</li>
-          <li>½ tsp turmeric</li>
-          <li>1 tsp coriander powder</li>
-          <li>½ tsp garam masala (mild)</li>
-          <li>Salt to taste</li>
-          <li>2 tbsp fresh cream (optional)</li>
-          <li>1 tsp ginger-garlic paste</li>
+          <li data-en="250g fresh spinach leaves" data-mr="२५० ग्रॅम ताजे पालक">250g fresh spinach leaves</li>
+          <li data-en="200g paneer, cubed" data-mr="२०० ग्रॅम पनीर, चौकोनी तुकडे">200g paneer, cubed</li>
+          <li data-en="1 medium onion, chopped" data-mr="१ मध्यम कांदा, चिरलेला">1 medium onion, chopped</li>
+          <li data-en="2 medium tomatoes, chopped" data-mr="२ मध्यम टोमॅटो, चिरलेले">2 medium tomatoes, chopped</li>
+          <li data-en="1 tbsp ghee" data-mr="१ चमचा तूप">1 tbsp ghee</li>
+          <li data-en="1 tsp cumin seeds" data-mr="१ चमचा जिरे">1 tsp cumin seeds</li>
+          <li data-en="½ tsp turmeric" data-mr="अर्धा चमचा हळद">½ tsp turmeric</li>
+          <li data-en="1 tsp ginger-garlic paste" data-mr="१ चमचा आले-लसूण पेस्ट">1 tsp ginger-garlic paste</li>
+          <li data-en="Salt to taste" data-mr="चवीनुसार मीठ">Salt to taste</li>
         </ul>
       </div>
       <div class="steps-col">
-        <div class="col-title">Method</div>
-        <div class="step"><div class="step-num">1</div><div class="step-text">Blanch spinach in boiling water for 2 mins, drain and blend into a smooth puree. Set aside.</div></div>
-        <div class="step"><div class="step-num">2</div><div class="step-text">Heat ghee in a pan, add cumin seeds. Once they splutter, add onion and sauté until golden brown.</div></div>
-        <div class="step"><div class="step-num">3</div><div class="step-text">Add ginger-garlic paste, cook 1 min. Add tomatoes and cook until soft and oil separates.</div></div>
-        <div class="step"><div class="step-num">4</div><div class="step-text">Add turmeric, coriander powder, and salt. Cook the masala for 2 more minutes.</div></div>
-        <div class="step"><div class="step-num">5</div><div class="step-text">Add the spinach puree, mix well, and simmer 5 mins. Gently fold in paneer cubes.</div></div>
-        <div class="step"><div class="step-num">6</div><div class="step-text">Finish with garam masala and cream if using. Serve hot with whole wheat roti.</div></div>
+        <div class="col-title" data-en="Method" data-mr="पद्धत">Method</div>
+        <div class="step"><div class="step-num">1</div><div class="step-text" data-en="Blanch spinach in boiling water for 2 mins, drain and blend into a smooth puree." data-mr="पालक उकळत्या पाण्यात २ मिनिटे शिजवा, पाणी काढा आणि गुळगुळीत प्युरी बनवा.">Blanch spinach for 2 mins, blend into smooth puree.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text" data-en="Heat ghee, add cumin. Once they splutter, add onion and sauté until golden." data-mr="तूप गरम करा, जिरे घाला. ते तडतडल्यावर कांदा घाला आणि सोनेरी होईपर्यंत परतावा.">Heat ghee, add cumin, sauté onion until golden.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text" data-en="Add ginger-garlic paste, then tomatoes. Cook until soft and oil separates." data-mr="आले-लसूण पेस्ट घाला, नंतर टोमॅटो घाला. मऊ होईपर्यंत शिजवा.">Add ginger-garlic paste, then tomatoes until soft.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text" data-en="Add turmeric, coriander powder, and salt. Cook the masala 2 more minutes." data-mr="हळद, धणे पावडर आणि मीठ घाला. मसाला आणखी २ मिनिटे शिजवा.">Add turmeric, coriander powder, salt. Cook 2 more minutes.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text" data-en="Add spinach puree, simmer 5 mins. Gently fold in paneer. Finish with garam masala." data-mr="पालक प्युरी घाला, ५ मिनिटे उकळवा. हळुवारपणे पनीर घाला. गरम मसाला शिंपडा.">Add spinach puree, simmer 5 mins. Fold in paneer. Finish with garam masala.</div></div>
       </div>
     </div>
   </div>
 
-  <!-- RECIPE 2 -->
-
   <div class="recipe-card">
-    <div class="recipe-header">
-      <div>
-        <div class="recipe-title">Moong Dal Khichdi with Vegetables</div>
-        <div class="recipe-meta">Serves 2 · 25 minutes · Dinner / Light Meal</div>
-        <div class="recipe-badges">
-          <span class="recipe-badge badge-veg">Vegetarian</span>
-          <span class="recipe-badge badge-protein">Protein</span>
-          <span class="recipe-badge badge-iron">Easy Digestion</span>
-        </div>
-      </div>
-    </div>
+    <div class="recipe-header"><div>
+      <div class="recipe-title" data-en="Moong Dal Khichdi with Vegetables" data-mr="भाज्यांची मूग डाळ खिचडी">Moong Dal Khichdi with Vegetables</div>
+      <div class="recipe-meta" data-en="Serves 2 · 25 minutes · Dinner" data-mr="२ जणांसाठी · २५ मिनिटे · रात्र">Serves 2 · 25 minutes · Dinner</div>
+      <div class="recipe-badges"><span class="recipe-badge badge-veg" data-en="Vegetarian" data-mr="शाकाहारी">Vegetarian</span><span class="recipe-badge badge-protein">Protein</span><span class="recipe-badge badge-iron">Easy Digestion</span></div>
+    </div></div>
     <div class="recipe-body">
       <div class="ingredients-col">
-        <div class="col-title">Ingredients</div>
+        <div class="col-title" data-en="Ingredients" data-mr="साहित्य">Ingredients</div>
         <ul class="ingredient-list">
-          <li>½ cup moong dal (yellow split)</li>
-          <li>½ cup rice</li>
-          <li>1 medium carrot, diced</li>
-          <li>½ cup green peas</li>
-          <li>½ cup spinach, chopped</li>
-          <li>1 tbsp ghee</li>
-          <li>1 tsp cumin seeds</li>
-          <li>½ tsp turmeric</li>
-          <li>¼ tsp asafoetida (hing)</li>
-          <li>Salt to taste</li>
-          <li>2.5 cups water</li>
-          <li>Fresh coriander to garnish</li>
+          <li data-en="½ cup moong dal (yellow split)" data-mr="अर्धा कप मूग डाळ">½ cup moong dal</li>
+          <li data-en="½ cup rice" data-mr="अर्धा कप तांदूळ">½ cup rice</li>
+          <li data-en="1 medium carrot, diced" data-mr="१ मध्यम गाजर, चिरलेले">1 medium carrot, diced</li>
+          <li data-en="½ cup green peas" data-mr="अर्धा कप हिरवे वाटाणे">½ cup green peas</li>
+          <li data-en="½ cup spinach, chopped" data-mr="अर्धा कप पालक, चिरलेला">½ cup spinach, chopped</li>
+          <li data-en="1 tbsp ghee + spices" data-mr="१ चमचा तूप + मसाले">1 tbsp ghee + spices</li>
         </ul>
       </div>
       <div class="steps-col">
-        <div class="col-title">Method</div>
-        <div class="step"><div class="step-num">1</div><div class="step-text">Wash rice and moong dal together. Soak for 15 minutes.</div></div>
-        <div class="step"><div class="step-num">2</div><div class="step-text">Heat ghee in a pressure cooker. Add cumin seeds and hing; let them sizzle.</div></div>
-        <div class="step"><div class="step-num">3</div><div class="step-text">Add diced carrot and peas, stir for 2 minutes. Add turmeric and salt.</div></div>
-        <div class="step"><div class="step-num">4</div><div class="step-text">Add drained rice, dal, and spinach. Mix everything well.</div></div>
-        <div class="step"><div class="step-num">5</div><div class="step-text">Add 2.5 cups water. Pressure cook for 3 whistles on medium heat.</div></div>
-        <div class="step"><div class="step-num">6</div><div class="step-text">Allow pressure to release, open and stir gently. Top with a tsp of ghee and coriander leaves. Serve warm.</div></div>
+        <div class="col-title" data-en="Method" data-mr="पद्धत">Method</div>
+        <div class="step"><div class="step-num">1</div><div class="step-text" data-en="Wash rice and moong dal together. Soak for 15 minutes." data-mr="तांदूळ आणि मूग डाळ एकत्र धुवा. १५ मिनिटे भिजवा.">Wash rice and dal. Soak 15 minutes.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text" data-en="Heat ghee in pressure cooker. Add cumin and hing; let them sizzle." data-mr="कुकरमध्ये तूप गरम करा. जिरे आणि हिंग घाला; तडतडू द्या.">Heat ghee in cooker, add cumin and hing.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text" data-en="Add carrot, peas, turmeric, salt. Add dal, rice, spinach. Mix well." data-mr="गाजर, वाटाणे, हळद, मीठ घाला. डाळ, तांदूळ, पालक घाला. नीट मिसळा.">Add veggies, dal, rice, spinach. Mix well.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text" data-en="Add 2.5 cups water. Pressure cook for 3 whistles on medium heat." data-mr="२.५ कप पाणी घाला. मध्यम आचेवर ३ शिट्ट्या द्या.">Add 2.5 cups water. Cook 3 whistles.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text" data-en="Open, stir gently. Top with a tsp of ghee and coriander leaves. Serve warm." data-mr="उघडा, हळुवारपणे ढवळा. तूप आणि कोथिंबीर घाला. गरम वाढा.">Open, stir gently. Top with ghee and coriander. Serve warm.</div></div>
       </div>
     </div>
   </div>
 
-  <!-- RECIPE 3 -->
-
   <div class="recipe-card">
-    <div class="recipe-header">
-      <div>
-        <div class="recipe-title">Vegetable Oats Upma</div>
-        <div class="recipe-meta">Serves 2 · 20 minutes · Breakfast</div>
-        <div class="recipe-badges">
-          <span class="recipe-badge badge-veg">Vegetarian</span>
-          <span class="recipe-badge badge-iron">Iron</span>
-          <span class="recipe-badge badge-folate">Folate</span>
-          <span class="recipe-badge badge-protein">Fibre</span>
-        </div>
-      </div>
-    </div>
+    <div class="recipe-header"><div>
+      <div class="recipe-title" data-en="Ragi Laddoo" data-mr="नाचणी लाडू">Ragi Laddoo</div>
+      <div class="recipe-meta" data-en="Makes 12–14 · 30 minutes · Snack" data-mr="१२-१४ लाडू · ३० मिनिटे · नाश्ता">Makes 12–14 · 30 minutes · Snack</div>
+      <div class="recipe-badges"><span class="recipe-badge badge-veg" data-en="Vegetarian" data-mr="शाकाहारी">Vegetarian</span><span class="recipe-badge badge-calcium">Calcium Rich</span><span class="recipe-badge badge-iron">Iron</span><span class="recipe-badge badge-protein">Protein</span></div>
+    </div></div>
     <div class="recipe-body">
       <div class="ingredients-col">
-        <div class="col-title">Ingredients</div>
+        <div class="col-title" data-en="Ingredients" data-mr="साहित्य">Ingredients</div>
         <ul class="ingredient-list">
-          <li>1 cup rolled oats</li>
-          <li>½ cup spinach, chopped</li>
-          <li>1 small carrot, grated</li>
-          <li>¼ cup green peas</li>
-          <li>1 small onion, finely chopped</li>
-          <li>1 tsp mustard seeds</li>
-          <li>8–10 curry leaves</li>
-          <li>1 tbsp ghee or oil</li>
-          <li>½ tsp turmeric</li>
-          <li>Salt to taste</li>
-          <li>Lemon juice — ½ lemon</li>
-          <li>Fresh coriander</li>
+          <li data-en="1 cup ragi flour" data-mr="१ कप नाचणी पीठ">1 cup ragi flour</li>
+          <li data-en="½ cup roasted peanuts, crushed" data-mr="अर्धा कप भाजलेले शेंगदाणे, कुटलेले">½ cup roasted peanuts, crushed</li>
+          <li data-en="3 tbsp jaggery powder" data-mr="३ चमचे गूळ पावडर">3 tbsp jaggery powder</li>
+          <li data-en="2 tbsp ghee" data-mr="२ चमचे तूप">2 tbsp ghee</li>
+          <li data-en="2 tbsp sesame seeds (til), roasted" data-mr="२ चमचे तीळ, भाजलेले">2 tbsp sesame seeds, roasted</li>
+          <li data-en="¼ tsp cardamom powder" data-mr="पाव चमचा वेलची पावडर">¼ tsp cardamom powder</li>
         </ul>
       </div>
       <div class="steps-col">
-        <div class="col-title">Method</div>
-        <div class="step"><div class="step-num">1</div><div class="step-text">Dry roast oats in a pan for 3–4 minutes until lightly golden and nutty. Set aside.</div></div>
-        <div class="step"><div class="step-num">2</div><div class="step-text">Heat ghee, add mustard seeds and curry leaves. Once they crackle, add onion and sauté until translucent.</div></div>
-        <div class="step"><div class="step-num">3</div><div class="step-text">Add carrots and peas; cook for 3 minutes. Add turmeric and salt.</div></div>
-        <div class="step"><div class="step-num">4</div><div class="step-text">Add 1.5 cups water and bring to a boil. Add roasted oats and spinach, stirring continuously.</div></div>
-        <div class="step"><div class="step-num">5</div><div class="step-text">Cook on low heat for 4–5 minutes until oats absorb water and are soft.</div></div>
-        <div class="step"><div class="step-num">6</div><div class="step-text">Squeeze lemon juice, garnish with coriander. Serve hot with a glass of milk.</div></div>
+        <div class="col-title" data-en="Method" data-mr="पद्धत">Method</div>
+        <div class="step"><div class="step-num">1</div><div class="step-text" data-en="Dry roast ragi flour on low heat for 8–10 minutes, stirring continuously until fragrant." data-mr="नाचणी पीठ मंद आचेवर सतत ढवळत ८-१० मिनिटे भाजा.">Dry roast ragi flour 8–10 minutes until fragrant.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text" data-en="Transfer to bowl. Add crushed peanuts, sesame, jaggery, cardamom." data-mr="वाटीत घाला. शेंगदाणे, तीळ, गूळ, वेलची घाला.">Add peanuts, sesame, jaggery, cardamom.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text" data-en="Add warm ghee and mix. Add warm water gradually, 1 tsp at a time, until shapeable." data-mr="कोमट तूप घाला आणि मिसळा. हळूहळू कोमट पाणी घाला जोपर्यंत गोळे बनवता येतील.">Add warm ghee. Add warm water gradually until shapeable.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text" data-en="Roll into small lemon-sized laddoos. Press firmly. Store in airtight box." data-mr="लिंबाच्या आकाराचे लाडू बनवा. घट्ट दाबा. हवाबंद डब्यात ठेवा.">Roll into lemon-sized laddoos. Store airtight.</div></div>
       </div>
     </div>
   </div>
 
-  <!-- RECIPE 4 -->
-
   <div class="recipe-card">
-    <div class="recipe-header">
-      <div>
-        <div class="recipe-title">Ragi (Finger Millet) Laddoo</div>
-        <div class="recipe-meta">Makes 12–14 ladoos · 30 minutes · Snack / Evening</div>
-        <div class="recipe-badges">
-          <span class="recipe-badge badge-veg">Vegetarian</span>
-          <span class="recipe-badge badge-calcium">Calcium Rich</span>
-          <span class="recipe-badge badge-iron">Iron</span>
-          <span class="recipe-badge badge-protein">Protein</span>
-        </div>
-      </div>
-    </div>
+    <div class="recipe-header"><div>
+      <div class="recipe-title" data-en="Haldi Doodh (Golden Milk)" data-mr="हळद दूध (गोल्डन मिल्क)">Haldi Doodh (Golden Milk)</div>
+      <div class="recipe-meta" data-en="Serves 1 · 5 minutes · Before Bedtime" data-mr="१ जणासाठी · ५ मिनिटे · झोपण्यापूर्वी">Serves 1 · 5 minutes · Before Bedtime</div>
+      <div class="recipe-badges"><span class="recipe-badge badge-veg" data-en="Vegetarian" data-mr="शाकाहारी">Vegetarian</span><span class="recipe-badge badge-calcium">Calcium</span><span class="recipe-badge badge-iron">Anti-inflammatory</span></div>
+    </div></div>
     <div class="recipe-body">
       <div class="ingredients-col">
-        <div class="col-title">Ingredients</div>
+        <div class="col-title" data-en="Ingredients" data-mr="साहित्य">Ingredients</div>
         <ul class="ingredient-list">
-          <li>1 cup ragi flour</li>
-          <li>½ cup roasted peanuts, coarsely crushed</li>
-          <li>3 tbsp jaggery powder (or to taste)</li>
-          <li>2 tbsp ghee</li>
-          <li>¼ tsp cardamom powder</li>
-          <li>2 tbsp sesame seeds (til), roasted</li>
-          <li>2 tbsp desiccated coconut (optional)</li>
-          <li>Warm water as needed to bind</li>
+          <li data-en="1 glass (250ml) full-fat milk" data-mr="१ ग्लास (२५० मिली) संपूर्ण दूध">1 glass full-fat milk</li>
+          <li data-en="½ tsp turmeric powder" data-mr="अर्धा चमचा हळद पावडर">½ tsp turmeric powder</li>
+          <li data-en="A pinch of black pepper" data-mr="एक चिमूट काळी मिरी">A pinch of black pepper</li>
+          <li data-en="3–4 strands of saffron" data-mr="३-४ केशराचे धागे">3–4 strands of saffron</li>
+          <li data-en="½ tsp ghee" data-mr="अर्धा चमचा तूप">½ tsp ghee</li>
+          <li data-en="1 tsp honey or jaggery" data-mr="१ चमचा मध किंवा गूळ">1 tsp honey or jaggery</li>
         </ul>
       </div>
       <div class="steps-col">
-        <div class="col-title">Method</div>
-        <div class="step"><div class="step-num">1</div><div class="step-text">Dry roast ragi flour on low-medium heat for 8–10 minutes, stirring continuously until fragrant. Do not burn.</div></div>
-        <div class="step"><div class="step-num">2</div><div class="step-text">Transfer to a bowl. Add crushed peanuts, roasted sesame, jaggery, cardamom, and coconut.</div></div>
-        <div class="step"><div class="step-num">3</div><div class="step-text">Add warm ghee and mix well. The mixture should have a crumbly, sandy texture.</div></div>
-        <div class="step"><div class="step-num">4</div><div class="step-text">Add warm water very gradually, 1 tsp at a time, kneading until you can shape the mixture into firm balls.</div></div>
-        <div class="step"><div class="step-num">5</div><div class="step-text">Roll into small lemon-sized laddoos. Press firmly. Store in an airtight box at room temperature.</div></div>
+        <div class="col-title" data-en="Method" data-mr="पद्धत">Method</div>
+        <div class="step"><div class="step-num">1</div><div class="step-text" data-en="Heat milk on low heat. Do not boil vigorously." data-mr="दूध मंद आचेवर गरम करा. जोरात उकळू देऊ नका.">Heat milk on low. Don't boil vigorously.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text" data-en="Add turmeric, black pepper, saffron, and cardamom. Stir gently." data-mr="हळद, काळी मिरी, केशर आणि वेलची घाला. हळुवारपणे ढवळा.">Add turmeric, pepper, saffron. Stir gently.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text" data-en="Simmer 2–3 minutes. Black pepper activates curcumin in turmeric, multiplying its benefits." data-mr="२-३ मिनिटे उकळवा. काळी मिरी हळदीतील कर्क्यूमिन सक्रिय करते.">Simmer 2–3 minutes. Pepper activates curcumin.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text" data-en="Remove from heat. Add ghee and honey. Stir and pour. Sip slowly before sleeping." data-mr="आचेवरून काढा. तूप आणि मध घाला. ढवळा. झोपण्यापूर्वी हळूहळू प्या.">Add ghee and honey. Sip slowly before sleeping.</div></div>
       </div>
     </div>
   </div>
-
-  <!-- RECIPE 5 -->
-
-  <div class="recipe-card">
-    <div class="recipe-header">
-      <div>
-        <div class="recipe-title">Sprouted Moong Chaat</div>
-        <div class="recipe-meta">Serves 2 · 10 minutes · Snack / Mid-Morning</div>
-        <div class="recipe-badges">
-          <span class="recipe-badge badge-veg">Vegetarian</span>
-          <span class="recipe-badge badge-protein">Protein</span>
-          <span class="recipe-badge badge-folate">Folate</span>
-        </div>
-      </div>
-    </div>
-    <div class="recipe-body">
-      <div class="ingredients-col">
-        <div class="col-title">Ingredients</div>
-        <ul class="ingredient-list">
-          <li>1.5 cups sprouted moong</li>
-          <li>1 small tomato, diced</li>
-          <li>½ cucumber, diced</li>
-          <li>½ small onion, finely chopped</li>
-          <li>Juice of 1 lemon</li>
-          <li>¼ tsp roasted cumin powder</li>
-          <li>Salt and black pepper to taste</li>
-          <li>Fresh coriander leaves</li>
-          <li>1 green chilli (optional, very mild)</li>
-          <li>½ tsp chaat masala (optional)</li>
-        </ul>
-      </div>
-      <div class="steps-col">
-        <div class="col-title">Method</div>
-        <div class="step"><div class="step-num">1</div><div class="step-text">Steam sprouted moong for 5 minutes (light steaming; they should remain slightly crunchy, not mushy).</div></div>
-        <div class="step"><div class="step-num">2</div><div class="step-text">Allow to cool slightly. Transfer to a mixing bowl.</div></div>
-        <div class="step"><div class="step-num">3</div><div class="step-text">Add tomato, cucumber, onion, and fresh coriander. Mix gently.</div></div>
-        <div class="step"><div class="step-num">4</div><div class="step-text">Add lemon juice, cumin powder, salt, and black pepper. Toss to combine.</div></div>
-        <div class="step"><div class="step-num">5</div><div class="step-text">Taste and adjust seasoning. Serve immediately or refrigerate for up to 2 hours.</div></div>
-        <div class="step"><div class="step-num">6</div><div class="step-text">Note: Always steam sprouts during pregnancy — avoid eating raw sprouts as they may carry bacteria.</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- RECIPE 6 -->
-
-  <div class="recipe-card">
-    <div class="recipe-header">
-      <div>
-        <div class="recipe-title">Haldi Doodh (Golden Milk / Turmeric Milk)</div>
-        <div class="recipe-meta">Serves 1 · 5 minutes · Before Bedtime</div>
-        <div class="recipe-badges">
-          <span class="recipe-badge badge-veg">Vegetarian</span>
-          <span class="recipe-badge badge-calcium">Calcium</span>
-          <span class="recipe-badge badge-iron">Anti-inflammatory</span>
-        </div>
-      </div>
-    </div>
-    <div class="recipe-body">
-      <div class="ingredients-col">
-        <div class="col-title">Ingredients</div>
-        <ul class="ingredient-list">
-          <li>1 glass (250ml) full-fat milk</li>
-          <li>½ tsp turmeric powder</li>
-          <li>A pinch of black pepper</li>
-          <li>3–4 strands of saffron (optional)</li>
-          <li>½ tsp ghee</li>
-          <li>1 tsp honey (or jaggery)</li>
-          <li>Pinch of cardamom powder</li>
-        </ul>
-      </div>
-      <div class="steps-col">
-        <div class="col-title">Method</div>
-        <div class="step"><div class="step-num">1</div><div class="step-text">Heat milk in a saucepan on low-medium heat. Do not boil vigorously.</div></div>
-        <div class="step"><div class="step-num">2</div><div class="step-text">Add turmeric, black pepper, saffron, and cardamom. Stir gently.</div></div>
-        <div class="step"><div class="step-num">3</div><div class="step-text">Simmer for 2–3 minutes. The black pepper activates curcumin in turmeric, multiplying its benefits.</div></div>
-        <div class="step"><div class="step-num">4</div><div class="step-text">Remove from heat. Add ghee and honey/jaggery. Stir well and pour into a glass.</div></div>
-        <div class="step"><div class="step-num">5</div><div class="step-text">Sip slowly before sleeping. This promotes deep sleep, reduces inflammation, and delivers calcium for baby's bones.</div></div>
-      </div>
-    </div>
-  </div>
-
 </section>
 
-<!-- ═══════════════════════════════ TIPS ═══════════════════════════════════ -->
-
+<!-- ═══════════════════ TIPS ═══════════════════ -->
 <section id="tips" class="section">
-  <p class="section-title">Tips, Reminders & Cautions</p>
-  <p class="section-sub">Important things to keep in mind during the 5th month</p>
+  <p class="section-title" data-en="Tips, Reminders & Cautions" data-mr="टिप्स, स्मरणपत्र आणि सावधगिरी">Tips, Reminders & Cautions</p>
+  <p class="section-sub" data-en="Important things to keep in mind" data-mr="लक्षात ठेवण्याच्या महत्त्वाच्या गोष्टी">Important things to keep in mind</p>
 
   <div class="tip-box">
-    <h4>✅ Always eat small, frequent meals</h4>
-    <p>The baby is growing fast in Month 5 and compressing your stomach. Eat 6 small meals instead of 3 large ones. This also prevents heartburn and acidity, which are very common now.</p>
+    <h4 data-en="✅ Always eat small, frequent meals" data-mr="✅ नेहमी लहान, वारंवार जेवण घ्या">✅ Always eat small, frequent meals</h4>
+    <p data-en="The baby is growing fast and compressing your stomach. Eat 6 small meals instead of 3 large ones. This also prevents heartburn and acidity, which are very common now." data-mr="बाळ वेगाने वाढत आहे आणि पोट दाबत आहे. ३ मोठ्या जेवणांऐवजी ६ लहान जेवणे खा. यामुळे छातीत जळजळ आणि आम्लता देखील टाळता येते.">The baby is growing fast. Eat 6 small meals instead of 3 large ones. This prevents heartburn and acidity.</p>
   </div>
   <div class="tip-box">
-    <h4>✅ Pair Iron-rich foods with Vitamin C</h4>
-    <p>Always eat iron-rich foods (spinach, dal, ragi) with a Vitamin C source (lemon juice, amla, orange) in the same meal. This doubles iron absorption naturally.</p>
+    <h4 data-en="✅ Pair Iron-rich foods with Vitamin C" data-mr="✅ लोहयुक्त पदार्थांसोबत व्हिटॅमिन C घ्या">✅ Pair Iron-rich foods with Vitamin C</h4>
+    <p data-en="Always eat iron-rich foods (spinach, dal, ragi) with a Vitamin C source (lemon juice, amla, orange) in the same meal. This doubles iron absorption naturally." data-mr="लोहयुक्त पदार्थ (पालक, डाळ, नाचणी) नेहमी व्हिटॅमिन C स्रोतासह (लिंबाचा रस, आवळा, संत्री) एकाच जेवणात खा. यामुळे लोह शोषण दुप्पट होते.">Eat iron-rich foods with Vitamin C in the same meal for double iron absorption.</p>
   </div>
   <div class="tip-box">
-    <h4>✅ Soak nuts and seeds before eating</h4>
-    <p>Soak almonds overnight and eat in the morning. Soak chia and flaxseeds before adding to food. Soaking removes phytic acid and dramatically improves nutrient absorption.</p>
+    <h4 data-en="✅ Soak nuts and seeds before eating" data-mr="✅ खाण्यापूर्वी सुकामेवा आणि बिया भिजवा">✅ Soak nuts and seeds before eating</h4>
+    <p data-en="Soak almonds overnight and eat in the morning. Soak chia and flaxseeds before adding to food. Soaking removes phytic acid and dramatically improves nutrient absorption." data-mr="बदाम रात्री भिजवा आणि सकाळी खा. चिया आणि जवस खाण्यापूर्वी भिजवा. भिजवल्याने फायटिक ॲसिड निघते आणि पोषणद्रव्यांचे शोषण नाटकीयरीत्या सुधारते.">Soak almonds overnight. Soak chia and flaxseeds before use for better nutrient absorption.</p>
   </div>
   <div class="tip-box">
-    <h4>✅ Steam sprouts — never eat them raw</h4>
-    <p>Raw sprouts can harbour harmful bacteria during pregnancy. Always lightly steam sprouted moong, chickpeas, or any sprouts before eating.</p>
+    <h4 data-en="✅ Steam sprouts — never eat them raw" data-mr="✅ मोड आलेल्या धान्यांना वाफवा — कधीही कच्चे खाऊ नका">✅ Steam sprouts — never eat them raw</h4>
+    <p data-en="Raw sprouts can harbour harmful bacteria during pregnancy. Always lightly steam sprouted moong, chickpeas, or any sprouts before eating." data-mr="गर्भावस्थेत कच्चे मोड आलेले धान्य हानिकारक जीवाणू असू शकतात. नेहमी मोड आलेले मूग, हरभरे किंवा कोणतेही मोड आलेले धान्य खाण्यापूर्वी हळुवारपणे वाफवा.">Raw sprouts can harbour bacteria. Always lightly steam before eating.</p>
+  </div>
+  <div class="tip-box">
+    <h4 data-en="✅ Gentle movement and sunlight" data-mr="✅ हळुवार हालचाल आणि सूर्यप्रकाश">✅ Gentle movement and sunlight</h4>
+    <p data-en="A 20–30 minute gentle walk in morning sunlight provides Vitamin D naturally. Pair with prenatal yoga if cleared by your doctor. Good sleep (7–8 hours) is as vital as good food." data-mr="सकाळच्या सूर्यप्रकाशात २०-३० मिनिटांची हळुवार फेरफटका व्हिटॅमिन D नैसर्गिकरीत्या पुरवतो. डॉक्टरांनी परवानगी दिल्यास प्रसूतीपूर्व योगाशी जोडा. चांगली झोप (७-८ तास) चांगल्या जेवणाइतकीच महत्त्वाची आहे.">20–30 minutes morning walk for Vitamin D. Good sleep (7–8 hours) is equally vital.</p>
   </div>
 
-  <div style="background: #fce4ec; border: 1px solid #f48fb1; border-radius: 14px; padding: 20px; margin-bottom: 16px;">
-    <h4 style="font-size: 14px; font-weight: 600; color: #880e4f; margin-bottom: 8px;">⚠️ Foods to Avoid</h4>
-    <p style="font-size: 13px; color: #5a5a5a;">Raw papaya (unripe), excessive pineapple, raw sprouts, unpasteurised dairy, very spicy or oily food, caffeine in excess (limit to 1 cup tea/day), packaged & processed food, excess salt, raw or undercooked eggs, street food with unhygienic handling, alcohol entirely.</p>
+  <div class="avoid-box">
+    <h4 data-en="⚠️ Foods to Avoid" data-mr="⚠️ टाळायचे पदार्थ">⚠️ Foods to Avoid</h4>
+    <p data-en="Raw papaya (unripe), excessive pineapple, raw sprouts, unpasteurised dairy, very spicy or oily food, excess caffeine (limit to 1 cup tea/day), packaged & processed food, excess salt, raw or undercooked eggs, alcohol entirely." data-mr="कच्ची पपई, जास्त अननस, कच्चे मोड आलेले धान्य, बिनपाश्चराइज केलेले दुग्धजन्य पदार्थ, खूप मसालेदार किंवा तेलकट जेवण, जास्त कॅफेन (दिवसातून १ कप चहापुरते मर्यादित), पॅकेज केलेले आणि प्रक्रिया केलेले अन्न, जास्त मीठ, कच्ची किंवा अर्धवट शिजवलेली अंडी, दारू पूर्णपणे.">Raw papaya, excessive pineapple, raw sprouts, unpasteurised dairy, excess spicy/oily food, excess caffeine (limit 1 cup tea/day), packaged food, excess salt, alcohol entirely.</p>
   </div>
 
-  <div class="tip-box">
-    <h4>✅ Take prenatal supplements as prescribed</h4>
-    <p>Food alone may not meet all requirements for iron, folic acid, and Vitamin D. Always take supplements prescribed by your gynaecologist alongside this diet plan. Do not self-medicate.</p>
+  <div class="doc-box">
+    <h4 data-en="👩‍⚕️ Always Consult Your Doctor" data-mr="👩‍⚕️ नेहमी आपल्या डॉक्टरांचा सल्ला घ्या">👩‍⚕️ Always Consult Your Doctor</h4>
+    <p data-en="This guide is for general reference. Every pregnancy is unique. Always follow the specific dietary advice given by your gynaecologist or registered dietitian, especially if you have gestational diabetes, anaemia, hypertension, or any other condition." data-mr="हा मार्गदर्शक सामान्य संदर्भासाठी आहे. प्रत्येक गर्भावस्था अनन्य असते. विशेषतः जर तुम्हाला गर्भावस्थेतील मधुमेह, अशक्तपणा, उच्च रक्तदाब किंवा इतर कोणतीही स्थिती असेल तर नेहमी आपल्या स्त्रीरोगतज्ज्ञ किंवा नोंदणीकृत आहारतज्ज्ञांनी दिलेल्या विशिष्ट आहार सल्ल्याचे पालन करा.">This guide is for general reference. Every pregnancy is unique. Always follow your gynaecologist's specific advice.</p>
   </div>
-  <div class="tip-box">
-    <h4>✅ Listen to your body's cravings & aversions</h4>
-    <p>Cravings and aversions during pregnancy are normal. If you feel nauseous with certain foods, replace them with nutrient-equivalent alternatives from this guide. Don't force yourself to eat anything that triggers discomfort.</p>
-  </div>
-  <div class="tip-box">
-    <h4>✅ Gentle movement and sunlight</h4>
-    <p>A 20–30 minute gentle walk in morning sunlight provides Vitamin D naturally. Pair with prenatal yoga if cleared by your doctor. Good sleep (7–8 hours) is as vital as good food.</p>
+</section>
+
+<!-- ═══════════════════ TRACKER ═══════════════════ -->
+<section id="tracker" class="section">
+  <p class="section-title" data-en="Daily Wellness Tracker" data-mr="दैनंदिन आरोग्य ट्रॅकर">Daily Wellness Tracker</p>
+  <p class="section-sub" data-en="Track hydration, mood, meals and notes every day — for Prajakta 💚" data-mr="दररोज हायड्रेशन, मनस्थिती, जेवण आणि नोंदी ट्रॅक करा — प्राजक्तासाठी 💚">Track hydration, mood, meals and notes every day — for Prajakta 💚</p>
+
+  <!-- Summary cards -->
+  <div class="summary-row" id="summary-row">
+    <div class="summary-card"><div class="summary-icon">💧</div><div class="summary-value" id="sum-water">0</div><div class="summary-label" data-en="Glasses today" data-mr="आजचे ग्लास">Glasses today</div></div>
+    <div class="summary-card"><div class="summary-icon">✅</div><div class="summary-value" id="sum-tasks">0%</div><div class="summary-label" data-en="Checklist done" data-mr="चेकलिस्ट पूर्ण">Checklist done</div></div>
+    <div class="summary-card"><div class="summary-icon">😊</div><div class="summary-value" id="sum-mood">–</div><div class="summary-label" data-en="Mood logged" data-mr="मनस्थिती नोंदली">Mood logged</div></div>
+    <div class="summary-card"><div class="summary-icon">📝</div><div class="summary-value" id="sum-notes">0</div><div class="summary-label" data-en="Notes saved" data-mr="नोंदी जतन केल्या">Notes saved</div></div>
   </div>
 
-  <div style="background: var(--soft-gold); border: 1px solid var(--gold); border-radius: 14px; padding: 20px;">
-    <h4 style="font-size: 14px; font-weight: 600; color: #7a5c1e; margin-bottom: 8px;">👩‍⚕️ Always Consult Your Doctor</h4>
-    <p style="font-size: 13px; color: #5a5a5a;">This guide is for general reference. Every pregnancy is unique. Always follow the specific dietary advice given by your gynaecologist or registered dietitian, especially if you have gestational diabetes, anaemia, hypertension, or any other condition.</p>
+  <!-- WATER TRACKER -->
+  <div class="water-tracker">
+    <div class="water-title" data-en="💧 Water & Hydration Tracker" data-mr="💧 पाणी आणि हायड्रेशन ट्रॅकर">💧 Water & Hydration Tracker</div>
+    <div class="water-sub" data-en="Tap a glass to log it. Goal: 10–12 glasses (2.5–3L)" data-mr="ग्लास टॅप करून नोंद करा. लक्ष्य: १०-१२ ग्लास (२.५-३ लि)">Tap a glass to log it. Goal: 10–12 glasses (2.5–3L)</div>
+    <div class="glasses-row" id="glasses-row">
+      <!-- Generated by JS -->
+    </div>
+    <div class="water-count" id="water-count">0 / 12 glasses</div>
+  </div>
+
+  <!-- MOOD TRACKER -->
+  <div class="mood-tracker">
+    <div class="mood-title" data-en="😊 How are you feeling, Prajakta?" data-mr="😊 प्राजक्ता, तुम्हाला कसे वाटत आहे?">😊 How are you feeling, Prajakta?</div>
+    <div class="mood-sub" data-en="Log your mood any time — this is your safe space 💕" data-mr="कधीही तुमची मनस्थिती नोंद करा — हे तुमचे सुरक्षित स्थान आहे 💕">Log your mood any time — this is your safe space 💕</div>
+    <div class="mood-row">
+      <button class="mood-btn" onclick="logMood(this,'😄','Great')" data-en-label="Great" data-mr-label="उत्तम"><span class="mood-emoji">😄</span><span class="mood-btn-label" data-en="Great" data-mr="उत्तम">Great</span></button>
+      <button class="mood-btn" onclick="logMood(this,'😊','Good')" data-en-label="Good" data-mr-label="चांगले"><span class="mood-emoji">😊</span><span class="mood-btn-label" data-en="Good" data-mr="चांगले">Good</span></button>
+      <button class="mood-btn" onclick="logMood(this,'😐','Okay')" data-en-label="Okay" data-mr-label="ठीक"><span class="mood-emoji">😐</span><span class="mood-btn-label" data-en="Okay" data-mr="ठीक">Okay</span></button>
+      <button class="mood-btn" onclick="logMood(this,'😔','Tired')" data-en-label="Tired" data-mr-label="थकलेले"><span class="mood-emoji">😔</span><span class="mood-btn-label" data-en="Tired" data-mr="थकलेले">Tired</span></button>
+      <button class="mood-btn" onclick="logMood(this,'🤢','Nauseous')" data-en-label="Nauseous" data-mr-label="मळमळ"><span class="mood-emoji">🤢</span><span class="mood-btn-label" data-en="Nauseous" data-mr="मळमळ">Nauseous</span></button>
+    </div>
+    <div class="mood-log-list" id="mood-log-list"></div>
+  </div>
+
+  <!-- DAILY CHECKLIST -->
+  <div class="checklist-section">
+    <div class="checklist-title" data-en="📋 Today's Nutrition Checklist" data-mr="📋 आजची पोषण चेकलिस्ट">📋 Today's Nutrition Checklist</div>
+    <div class="checklist-progress">
+      <div class="prog-bar-wrap"><div class="prog-bar-fill" id="cl-bar" style="width:0%"></div></div>
+      <div class="prog-text" id="cl-text">0 / 10</div>
+    </div>
+    <div id="checklist-container">
+      <!-- Generated by JS -->
+    </div>
+    <button class="btn-save" onclick="resetChecklist()" style="margin-top:10px; background: var(--rose);">
+      <span data-en="🔄 Reset for Tomorrow" data-mr="🔄 उद्यासाठी रीसेट करा">🔄 Reset for Tomorrow</span>
+    </button>
+  </div>
+</section>
+
+<!-- ═══════════════════ NOTES ═══════════════════ -->
+<section id="journal" class="section">
+  <p class="section-title" data-en="Prajakta's Pregnancy Journal" data-mr="प्राजक्ताचे गर्भावस्था जर्नल">Prajakta's Pregnancy Journal</p>
+  <p class="section-sub" data-en="Write how you're feeling, what you ate, what the doctor said — your personal space 🌸" data-mr="तुम्हाला कसे वाटत आहे, काय खाल्ले, डॉक्टरांनी काय सांगितले — तुमची वैयक्तिक जागा 🌸">Write how you're feeling, what you ate, notes from the doctor — your personal space 🌸</p>
+
+  <!-- Quote Card -->
+  <div class="quote-card" id="quote-card">
+    <div class="quote-text" id="quote-text">"You are growing a human being inside you — the most extraordinary thing a body can do."</div>
+    <div class="quote-author" id="quote-author">— For Prajakta, with love from Vaibhav 💚</div>
+    <button class="quote-refresh" onclick="nextQuote()" data-en="✨ New inspiration" data-mr="✨ नवीन प्रेरणा">✨ New inspiration</button>
+  </div>
+
+  <!-- Notes Section -->
+  <div class="notes-section">
+    <div class="notes-title" data-en="📝 Add a Journal Entry" data-mr="📝 जर्नल नोंद जोडा">📝 Add a Journal Entry</div>
+    <textarea class="notes-area" id="note-input" data-en-placeholder="Write anything — how you feel today, cravings, symptoms, Vaibhav's funny reactions, questions for the doctor..." data-mr-placeholder="काहीही लिहा — आज कसे वाटते, काय खावेसे वाटते, लक्षणे, वैभवच्या मजेशीर प्रतिक्रिया, डॉक्टरांसाठी प्रश्न..." placeholder="Write anything — how you feel today, cravings, symptoms, Vaibhav's funny reactions, questions for the doctor..."></textarea>
+    <div class="notes-actions">
+      <button class="btn-save" onclick="saveNote()" data-en="💾 Save Entry" data-mr="💾 नोंद जतन करा">💾 Save Entry</button>
+      <button class="btn-clear" onclick="clearInput()" data-en="Clear" data-mr="साफ करा">Clear</button>
+    </div>
+    <div class="saved-notes" id="saved-notes"></div>
   </div>
 </section>
 
 <div class="footer">
-  Pregnancy Nutrition Guide · 5th Month · Pure Vegetarian · For reference only — always consult your doctor
+  <span data-en="Pregnancy Nutrition Guide · Pure Vegetarian · Crafted with love for Vaibhav & Prajakta · For reference only — always consult your doctor 💚" data-mr="गर्भावस्था पोषण मार्गदर्शक · शुद्ध शाकाहारी · वैभव आणि प्राजक्तासाठी प्रेमाने तयार केला · केवळ संदर्भासाठी — नेहमी आपल्या डॉक्टरांचा सल्ला घ्या 💚">Pregnancy Nutrition Guide · Pure Vegetarian · Crafted with love for Vaibhav & Prajakta · For reference only — always consult your doctor 💚</span>
 </div>
 
-<script>
-  function showTab(id) {
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    event.target.classList.add('active');
-  }
-</script>
+<div class="toast" id="toast"></div>
 
+<script>
+// ── STATE ──
+let currentLang = 'en';
+let waterCount = parseInt(localStorage.getItem('water') || '0');
+let moodLog = JSON.parse(localStorage.getItem('moodLog') || '[]');
+let savedNotes = JSON.parse(localStorage.getItem('notes') || '[]');
+let checklistState = JSON.parse(localStorage.getItem('checklist') || '{}');
+let currentQuote = 0;
+
+// ── TABS ──
+const tabs = [
+  { id:'foods',     en:'🥬 Foods List',      mr:'🥬 खाद्यपदार्थ' },
+  { id:'nutrients', en:'🧬 Key Nutrients',   mr:'🧬 पोषणद्रव्ये' },
+  { id:'mealplan',  en:'🍽 Meal Plan',       mr:'🍽 जेवण योजना' },
+  { id:'recipes',   en:'👩‍🍳 Recipes',         mr:'👩‍🍳 पाककृती' },
+  { id:'tips',      en:'💡 Tips & Cautions', mr:'💡 टिप्स' },
+  { id:'tracker',   en:'📊 Daily Tracker',   mr:'📊 ट्रॅकर' },
+  { id:'journal',   en:'📖 Journal',         mr:'📖 जर्नल' },
+];
+
+function buildTabs() {
+  const nav = document.getElementById('tab-nav');
+  nav.innerHTML = tabs.map((t,i) =>
+    `<button class="tab-btn${i===0?' active':''}" onclick="showTab('${t.id}',this)" data-en="${t.en}" data-mr="${t.mr}">${currentLang==='mr'?t.mr:t.en}</button>`
+  ).join('');
+}
+
+function showTab(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if(el) el.classList.add('active');
+  else document.querySelector(`.tab-btn[onclick*="${id}"]`)?.classList.add('active');
+}
+
+// ── PROGRESS BANNER ──
+const weeks = [
+  {w:'Wk 17',en:'Week 17',mr:'आठवडा १७'},
+  {w:'Wk 18',en:'Week 18',mr:'आठवडा १८'},
+  {w:'Wk 19',en:'Week 19',mr:'आठवडा १९'},
+  {w:'Wk 20',en:'Week 20',mr:'आठवडा २०'},
+  {w:'Wk 21',en:'Week 21 ★',mr:'आठवडा २१ ★'},
+  {w:'Wk 22',en:'Week 22',mr:'आठवडा २२'},
+];
+function buildProgress() {
+  const banner = document.getElementById('progress-banner');
+  let html = '';
+  weeks.forEach((w,i) => {
+    const cls = i===4?'current':i<4?'done':'';
+    html += `<div class="prog-item"><div class="prog-week ${cls}">${w.w}</div><div class="prog-label">${currentLang==='mr'?w.mr:w.en}</div></div>`;
+    if(i<weeks.length-1) html += `<div class="prog-connector"></div>`;
+  });
+  banner.innerHTML = html;
+}
+
+// ── LANGUAGE ──
+function setLang(lang) {
+  currentLang = lang;
+  document.body.className = lang === 'mr' ? 'lang-mr' : '';
+  document.getElementById('btn-en').className = 'lang-btn' + (lang==='en'?' active':'');
+  document.getElementById('btn-mr').className = 'lang-btn' + (lang==='mr'?' active':'');
+
+  document.querySelectorAll('[data-en]').forEach(el => {
+    const val = el.getAttribute('data-' + lang);
+    if(val) {
+      if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = el.getAttribute('data-' + lang + '-placeholder') || val;
+      } else {
+        el.innerHTML = val;
+      }
+    }
+  });
+
+  // note-input placeholder
+  const ni = document.getElementById('note-input');
+  if(ni) ni.placeholder = ni.getAttribute('data-'+lang+'-placeholder') || '';
+
+  buildTabs();
+  buildProgress();
+  buildChecklist();
+  renderWater();
+  renderMoodLog();
+  renderNotes();
+  updateSummary();
+  updateQuote();
+}
+
+// ── WATER TRACKER ──
+function renderWater() {
+  const row = document.getElementById('glasses-row');
+  row.innerHTML = '';
+  for(let i=0;i<12;i++) {
+    const btn = document.createElement('button');
+    btn.className = 'glass-btn' + (i < waterCount ? ' filled' : '');
+    btn.innerHTML = i < waterCount ? '💧' : '🫙';
+    btn.onclick = () => toggleGlass(i);
+    row.appendChild(btn);
+  }
+  document.getElementById('water-count').textContent =
+    currentLang === 'mr'
+      ? `${waterCount} / १२ ग्लास`
+      : `${waterCount} / 12 glasses`;
+  updateSummary();
+}
+
+function toggleGlass(i) {
+  waterCount = i < waterCount ? i : i + 1;
+  localStorage.setItem('water', waterCount);
+  renderWater();
+  if(waterCount === 12) showToast(currentLang === 'mr' ? '🎉 हायड्रेशन लक्ष्य पूर्ण! छान!' : '🎉 Hydration goal complete! Amazing!');
+}
+
+// ── MOOD TRACKER ──
+function logMood(btn, emoji, label) {
+  document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  const now = new Date();
+  const timeStr = now.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+  moodLog.unshift({ emoji, label, time: timeStr });
+  if(moodLog.length > 10) moodLog.pop();
+  localStorage.setItem('moodLog', JSON.stringify(moodLog));
+  renderMoodLog();
+  updateSummary();
+  showToast(currentLang === 'mr' ? `${emoji} मनस्थिती नोंदली — ${label}` : `${emoji} Mood logged — ${label}`);
+}
+
+function renderMoodLog() {
+  const list = document.getElementById('mood-log-list');
+  if(!moodLog.length) { list.innerHTML=''; return; }
+  list.innerHTML = moodLog.map(m =>
+    `<div class="mood-log-entry"><span class="mood-log-time">${m.time}</span>${m.emoji} ${m.label}</div>`
+  ).join('');
+}
+
+// ── CHECKLIST ──
+const checklistItems = [
+  { id:'c1', en:'Had soaked almonds & walnuts', mr:'भिजवलेले बदाम आणि अक्रोड खाल्ले', time:'6:30 AM' },
+  { id:'c2', en:'Had breakfast with protein', mr:'प्रथिनेयुक्त नाश्ता केला', time:'8:00 AM' },
+  { id:'c3', en:'Mid-morning fruit & nut snack', mr:'सकाळचा फळे व सुकामेवा नाश्ता', time:'10:30 AM' },
+  { id:'c4', en:'Drank 3+ glasses of water before lunch', mr:'दुपारच्या जेवणापूर्वी ३+ ग्लास पाणी प्यायले', time:'Before lunch' },
+  { id:'c5', en:'Had full lunch thali with dal + sabzi + roti', mr:'डाळ + भाजी + रोटी सह संपूर्ण थाळी जेवण केले', time:'1:00 PM' },
+  { id:'c6', en:'Had coconut water / chaas after lunch', mr:'दुपारच्या जेवणानंतर नारळ पाणी / ताक प्यायले', time:'2:00 PM' },
+  { id:'c7', en:'Evening snack — ragi laddoo or fruits', mr:'संध्याकाळचा नाश्ता — नाचणी लाडू किंवा फळे', time:'5:00 PM' },
+  { id:'c8', en:'Took prenatal supplements as prescribed', mr:'प्रिस्क्रिप्शनप्रमाणे प्रसूतीपूर्व सप्लीमेंट घेतले', time:'With meal' },
+  { id:'c9', en:'Had dinner (light & early) before 8 PM', mr:'रात्रीचे जेवण (हलके आणि लवकर) ८ PM आधी केले', time:'7:30 PM' },
+  { id:'c10', en:'Had haldi doodh before bed', mr:'झोपण्यापूर्वी हळद दूध प्यायले', time:'9:30 PM' },
+];
+
+function buildChecklist() {
+  const container = document.getElementById('checklist-container');
+  container.innerHTML = checklistItems.map(item => {
+    const checked = !!checklistState[item.id];
+    return `
+      <div class="check-item ${checked?'checked':''}" onclick="toggleCheck('${item.id}',this)">
+        <div class="check-box">${checked?'✓':''}</div>
+        <div class="check-text">
+          <div class="check-label">${currentLang==='mr'?item.mr:item.en}</div>
+        </div>
+        <div class="check-time">${item.time}</div>
+      </div>`;
+  }).join('');
+  updateChecklistProgress();
+}
+
+function toggleCheck(id, el) {
+  checklistState[id] = !checklistState[id];
+  localStorage.setItem('checklist', JSON.stringify(checklistState));
+  const box = el.querySelector('.check-box');
+  if(checklistState[id]) {
+    el.classList.add('checked');
+    box.textContent = '✓';
+  } else {
+    el.classList.remove('checked');
+    box.textContent = '';
+  }
+  updateChecklistProgress();
+  updateSummary();
+}
+
+function updateChecklistProgress() {
+  const done = Object.values(checklistState).filter(Boolean).length;
+  const pct = Math.round(done/checklistItems.length*100);
+  document.getElementById('cl-bar').style.width = pct + '%';
+  document.getElementById('cl-text').textContent = `${done} / ${checklistItems.length}`;
+  if(done === checklistItems.length) showToast(currentLang==='mr' ? '🌟 आजची चेकलिस्ट पूर्ण! शाब्बास प्राजक्ता!' : '🌟 Checklist complete! Well done Prajakta!');
+}
+
+function resetChecklist() {
+  checklistState = {};
+  localStorage.setItem('checklist', JSON.stringify(checklistState));
+  buildChecklist();
+  updateSummary();
+  showToast(currentLang === 'mr' ? '🔄 उद्यासाठी रीसेट केले' : '🔄 Reset for tomorrow');
+}
+
+// ── NOTES / JOURNAL ──
+function saveNote() {
+  const input = document.getElementById('note-input');
+  const text = input.value.trim();
+  if(!text) return showToast(currentLang==='mr' ? 'काहीतरी लिहा प्रथम...' : 'Write something first...');
+  const now = new Date();
+  savedNotes.unshift({ text, date: now.toLocaleDateString('en-IN', {day:'numeric',month:'long',year:'numeric'}), time: now.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}) });
+  localStorage.setItem('notes', JSON.stringify(savedNotes));
+  input.value = '';
+  renderNotes();
+  updateSummary();
+  showToast(currentLang === 'mr' ? '💾 नोंद जतन केली!' : '💾 Entry saved!');
+}
+
+function clearInput() {
+  document.getElementById('note-input').value = '';
+}
+
+function deleteNote(i) {
+  savedNotes.splice(i,1);
+  localStorage.setItem('notes', JSON.stringify(savedNotes));
+  renderNotes();
+  updateSummary();
+}
+
+function renderNotes() {
+  const container = document.getElementById('saved-notes');
+  if(!savedNotes.length) { container.innerHTML=''; return; }
+  container.innerHTML = savedNotes.map((n,i) => `
+    <div class="saved-note-item">
+      <div class="note-date">📅 ${n.date} · ${n.time}</div>
+      <div class="note-text">${n.text}</div>
+      <button class="note-delete" onclick="deleteNote(${i})">🗑</button>
+    </div>`).join('');
+}
+
+// ── QUOTES ──
+const quotes = [
+  { en: 'You are growing a human being inside you — the most extraordinary thing a body can do.', mr: 'तुम्ही आत एक माणूस वाढवत आहात — शरीर करू शकेल सर्वात असाधारण गोष्ट.' },
+  { en: 'Every bite you take is a gift of love to the little one growing inside.', mr: 'तुम्ही घेतलेला प्रत्येक घास आत वाढणाऱ्या छोट्याशाला प्रेमाची भेट आहे.' },
+  { en: 'Your body is doing something miraculous — trust it, nourish it, honor it.', mr: 'तुमचे शरीर काहीतरी चमत्कारिक करत आहे — त्यावर विश्वास ठेवा, त्याला पोषण द्या, त्याचा सन्मान करा.' },
+  { en: 'Being a mother is learning about strengths you didn\'t know you had.', mr: 'आई होणे म्हणजे तुम्हाला माहित नसलेल्या शक्तींबद्दल शिकणे.' },
+  { en: 'The love between a mother and child begins long before birth.', mr: 'आई आणि मुलामधील प्रेम जन्माआधीच सुरू होते.' },
+  { en: 'Rest is not laziness — it is medicine. Nap without guilt.', mr: 'विश्रांती आळशीपणा नाही — ती औषध आहे. अपराधभावाशिवाय विश्रांती घ्या.' },
+  { en: 'Vaibhav is beside you every step — this journey is yours together. 💚', mr: 'वैभव प्रत्येक पावलावर तुमच्यासोबत आहे — हा प्रवास एकत्र तुमचा आहे. 💚' },
+];
+
+function updateQuote() {
+  const q = quotes[currentQuote];
+  document.getElementById('quote-text').textContent = '"' + (currentLang==='mr'?q.mr:q.en) + '"';
+  const authorEl = document.getElementById('quote-author');
+  if(authorEl) authorEl.textContent = currentLang==='mr' ? '— प्राजक्तासाठी, वैभवच्या प्रेमासह 💚' : '— For Prajakta, with love from Vaibhav 💚';
+}
+
+function nextQuote() {
+  currentQuote = (currentQuote + 1) % quotes.length;
+  updateQuote();
+}
+
+// ── SUMMARY UPDATE ──
+function updateSummary() {
+  document.getElementById('sum-water').textContent = waterCount;
+  const done = Object.values(checklistState).filter(Boolean).length;
+  document.getElementById('sum-tasks').textContent = Math.round(done/checklistItems.length*100) + '%';
+  document.getElementById('sum-mood').textContent = moodLog.length ? moodLog[0].emoji : '–';
+  document.getElementById('sum-notes').textContent = savedNotes.length;
+}
+
+// ── TOAST ──
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ── INIT ──
+buildTabs();
+buildProgress();
+buildChecklist();
+renderWater();
+renderMoodLog();
+renderNotes();
+updateSummary();
+updateQuote();
+</script>
 </body>
 </html>
