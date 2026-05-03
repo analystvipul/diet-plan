@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pregnancy Nutrition Guide — 5th Month</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fdf8f0;
+    --warm-white: #fffcf7;
+    --sage: #7a9e7e;
+    --deep-sage: #4a7050;
+    --rose: #e8927c;
+    --deep-rose: #c9604a;
+    --gold: #d4a843;
+    --soft-gold: #f5e6c0;
+    --charcoal: #2d2d2d;
+    --text-mid: #5a5a5a;
+    --text-light: #8a8a8a;
+    --border: #e8ddd0;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background: var(–cream);
+font-family: ‘DM Sans’, sans-serif;
+color: var(–charcoal);
+line-height: 1.7;
+}
+
+/* ── HERO ── */
+.hero {
+background: linear-gradient(135deg, #4a7050 0%, #7a9e7e 50%, #a8c5a0 100%);
+padding: 60px 24px 80px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+.hero::before {
+content: ‘’;
+position: absolute; inset: 0;
+background: radial-gradient(ellipse at 30% 50%, rgba(212,168,67,.18) 0%, transparent 60%),
+radial-gradient(ellipse at 80% 20%, rgba(232,146,124,.15) 0%, transparent 50%);
+}
+.hero-badge {
+display: inline-block;
+background: rgba(255,255,255,.2);
+border: 1px solid rgba(255,255,255,.4);
+color: #fff;
+font-size: 11px;
+letter-spacing: 3px;
+text-transform: uppercase;
+padding: 6px 18px;
+border-radius: 50px;
+margin-bottom: 20px;
+font-weight: 500;
+}
+.hero h1 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(32px, 7vw, 52px);
+color: #fff;
+font-weight: 700;
+line-height: 1.15;
+margin-bottom: 16px;
+}
+.hero h1 em { font-style: italic; color: #f5e6c0; }
+.hero p {
+color: rgba(255,255,255,.85);
+font-size: 16px;
+max-width: 560px;
+margin: 0 auto;
+font-weight: 300;
+}
+.hero-icons {
+display: flex;
+justify-content: center;
+gap: 12px;
+margin-top: 28px;
+flex-wrap: wrap;
+}
+.hero-pill {
+background: rgba(255,255,255,.15);
+border: 1px solid rgba(255,255,255,.3);
+color: #fff;
+padding: 6px 14px;
+border-radius: 30px;
+font-size: 13px;
+}
+
+/* ── NAV TABS ── */
+.tab-nav {
+position: sticky;
+top: 0;
+background: var(–warm-white);
+border-bottom: 1px solid var(–border);
+z-index: 100;
+display: flex;
+overflow-x: auto;
+padding: 0 12px;
+scrollbar-width: none;
+}
+.tab-nav::-webkit-scrollbar { display: none; }
+.tab-btn {
+flex-shrink: 0;
+padding: 14px 18px;
+font-size: 13px;
+font-weight: 500;
+color: var(–text-light);
+background: none;
+border: none;
+border-bottom: 2px solid transparent;
+cursor: pointer;
+transition: all .2s;
+white-space: nowrap;
+font-family: ‘DM Sans’, sans-serif;
+}
+.tab-btn.active {
+color: var(–deep-sage);
+border-bottom-color: var(–deep-sage);
+}
+.tab-btn:hover { color: var(–deep-sage); }
+
+/* ── SECTIONS ── */
+.section { display: none; padding: 28px 20px 60px; max-width: 800px; margin: 0 auto; }
+.section.active { display: block; }
+
+.section-title {
+font-family: ‘Playfair Display’, serif;
+font-size: 26px;
+color: var(–charcoal);
+margin-bottom: 6px;
+}
+.section-sub {
+color: var(–text-light);
+font-size: 14px;
+margin-bottom: 28px;
+}
+
+/* ── FOOD GRID ── */
+.food-category {
+background: var(–warm-white);
+border: 1px solid var(–border);
+border-radius: 16px;
+padding: 22px;
+margin-bottom: 20px;
+}
+.cat-header {
+display: flex;
+align-items: center;
+gap: 12px;
+margin-bottom: 16px;
+}
+.cat-icon {
+width: 42px; height: 42px;
+border-radius: 12px;
+display: flex; align-items: center; justify-content: center;
+font-size: 20px;
+flex-shrink: 0;
+}
+.cat-icon.green { background: #e8f5e9; }
+.cat-icon.orange { background: #fff3e0; }
+.cat-icon.yellow { background: #fffde7; }
+.cat-icon.red { background: #fce4ec; }
+.cat-icon.brown { background: #efebe9; }
+.cat-icon.blue { background: #e3f2fd; }
+
+.cat-name {
+font-family: ‘Playfair Display’, serif;
+font-size: 18px;
+font-weight: 700;
+}
+.cat-note { font-size: 12px; color: var(–text-light); }
+
+.food-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.food-tag {
+background: var(–soft-gold);
+color: #7a5c1e;
+padding: 5px 12px;
+border-radius: 20px;
+font-size: 13px;
+font-weight: 500;
+}
+.food-tag.green-tag { background: #e8f5e9; color: #2e7d32; }
+.food-tag.rose-tag { background: #fce4ec; color: #880e4f; }
+.food-tag.blue-tag { background: #e3f2fd; color: #1565c0; }
+
+.nutrient-row {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-top: 12px;
+padding-top: 12px;
+border-top: 1px solid var(–border);
+}
+.nutrient-pill {
+font-size: 11px;
+padding: 3px 10px;
+border-radius: 20px;
+font-weight: 500;
+letter-spacing: .3px;
+}
+.pill-sage { background: #e8f5e9; color: var(–deep-sage); }
+.pill-rose { background: #fce4ec; color: #b71c1c; }
+.pill-gold { background: var(–soft-gold); color: #7a5c1e; }
+
+/* ── MEAL PLAN ── */
+.day-header {
+background: linear-gradient(135deg, var(–deep-sage), var(–sage));
+color: #fff;
+padding: 16px 20px;
+border-radius: 14px 14px 0 0;
+font-family: ‘Playfair Display’, serif;
+font-size: 16px;
+}
+.meal-timeline { background: var(–warm-white); border: 1px solid var(–border); border-top: none; border-radius: 0 0 14px 14px; overflow: hidden; margin-bottom: 24px; }
+
+.meal-row {
+display: flex;
+align-items: flex-start;
+padding: 18px 20px;
+border-bottom: 1px solid var(–border);
+gap: 16px;
+transition: background .2s;
+}
+.meal-row:last-child { border-bottom: none; }
+.meal-row:hover { background: var(–cream); }
+
+.meal-time {
+flex-shrink: 0;
+width: 90px;
+text-align: center;
+}
+.time-label {
+font-size: 11px;
+color: var(–text-light);
+text-transform: uppercase;
+letter-spacing: 1px;
+display: block;
+}
+.time-value {
+font-size: 13px;
+font-weight: 600;
+color: var(–deep-sage);
+}
+
+.meal-dot {
+width: 10px; height: 10px;
+border-radius: 50%;
+margin-top: 6px;
+flex-shrink: 0;
+}
+.dot-morning { background: var(–gold); }
+.dot-noon { background: var(–rose); }
+.dot-evening { background: var(–sage); }
+.dot-night { background: #9575cd; }
+.dot-snack { background: #4db6ac; }
+
+.meal-content { flex: 1; }
+.meal-name { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+.meal-desc { font-size: 13px; color: var(–text-mid); }
+.meal-benefits { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.benefit-chip {
+font-size: 11px;
+padding: 2px 9px;
+border-radius: 12px;
+font-weight: 500;
+}
+.chip-green { background: #e8f5e9; color: #2e7d32; }
+.chip-orange { background: #fff3e0; color: #e65100; }
+.chip-purple { background: #ede7f6; color: #4527a0; }
+.chip-blue { background: #e3f2fd; color: #1565c0; }
+
+/* ── RECIPES ── */
+.recipe-card {
+background: var(–warm-white);
+border: 1px solid var(–border);
+border-radius: 16px;
+overflow: hidden;
+margin-bottom: 24px;
+}
+.recipe-header {
+padding: 20px 22px 16px;
+border-bottom: 1px solid var(–border);
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 12px;
+}
+.recipe-title {
+font-family: ‘Playfair Display’, serif;
+font-size: 20px;
+font-weight: 700;
+margin-bottom: 4px;
+}
+.recipe-meta { font-size: 13px; color: var(–text-light); }
+.recipe-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.recipe-badge {
+font-size: 11px;
+padding: 3px 10px;
+border-radius: 12px;
+font-weight: 600;
+}
+.badge-veg { background: #e8f5e9; color: #2e7d32; }
+.badge-protein { background: #fff3e0; color: #e65100; }
+.badge-iron { background: #fce4ec; color: #880e4f; }
+.badge-calcium { background: #e3f2fd; color: #1565c0; }
+.badge-folate { background: #ede7f6; color: #4527a0; }
+
+.recipe-body { display: grid; grid-template-columns: 1fr 1.6fr; }
+@media(max-width:580px){ .recipe-body { grid-template-columns: 1fr; } }
+
+.ingredients-col {
+padding: 18px 20px;
+border-right: 1px solid var(–border);
+background: var(–cream);
+}
+@media(max-width:580px){ .ingredients-col { border-right: none; border-bottom: 1px solid var(–border); } }
+
+.col-title {
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 2px;
+color: var(–text-light);
+font-weight: 500;
+margin-bottom: 12px;
+}
+.ingredient-list { list-style: none; }
+.ingredient-list li {
+display: flex;
+align-items: flex-start;
+gap: 8px;
+font-size: 13px;
+padding: 4px 0;
+color: var(–charcoal);
+}
+.ingredient-list li::before {
+content: ‘•’;
+color: var(–sage);
+font-weight: 700;
+flex-shrink: 0;
+margin-top: 1px;
+}
+
+.steps-col { padding: 18px 20px; }
+.step { display: flex; gap: 14px; margin-bottom: 14px; }
+.step:last-child { margin-bottom: 0; }
+.step-num {
+width: 24px; height: 24px;
+background: var(–deep-sage);
+color: #fff;
+border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+font-size: 12px;
+font-weight: 700;
+flex-shrink: 0;
+margin-top: 1px;
+}
+.step-text { font-size: 13px; color: var(–charcoal); line-height: 1.6; }
+
+/* ── NUTRIENTS INFO ── */
+.info-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+gap: 14px;
+margin-bottom: 28px;
+}
+.info-card {
+background: var(–warm-white);
+border: 1px solid var(–border);
+border-radius: 14px;
+padding: 18px;
+}
+.info-icon { font-size: 26px; margin-bottom: 10px; }
+.info-name { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+.info-why { font-size: 12px; color: var(–text-mid); line-height: 1.5; }
+.info-amount {
+margin-top: 10px;
+font-size: 11px;
+color: var(–deep-sage);
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: .5px;
+}
+
+/* ── TIPS ── */
+.tip-box {
+background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+border: 1px solid #c8e6c9;
+border-radius: 14px;
+padding: 20px;
+margin-bottom: 16px;
+}
+.tip-box h4 { font-size: 14px; font-weight: 600; color: var(–deep-sage); margin-bottom: 8px; }
+.tip-box p { font-size: 13px; color: var(–text-mid); }
+
+/* ── FOOTER ── */
+.footer {
+background: var(–charcoal);
+color: rgba(255,255,255,.5);
+text-align: center;
+padding: 24px;
+font-size: 12px;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(16px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.section.active > * {
+animation: fadeUp .35s ease both;
+}
+.section.active > *:nth-child(2) { animation-delay: .05s; }
+.section.active > *:nth-child(3) { animation-delay: .1s; }
+.section.active > *:nth-child(4) { animation-delay: .15s; }
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+
+<div class="hero">
+  <div class="hero-badge">5th Month Pregnancy</div>
+  <h1>Nourishing <em>You</em><br>& Your Baby</h1>
+  <p>A complete vegetarian nutrition guide with daily meal plans and recipes crafted for the 5th month of pregnancy</p>
+  <div class="hero-icons">
+    <span class="hero-pill">🌿 100% Vegetarian</span>
+    <span class="hero-pill">💪 Protein Rich</span>
+    <span class="hero-pill">🧬 Folate & Iron</span>
+    <span class="hero-pill">🦴 Calcium</span>
+  </div>
+</div>
+
+<!-- TAB NAV -->
+
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('foods')">🥬 Foods List</button>
+  <button class="tab-btn" onclick="showTab('nutrients')">🧬 Key Nutrients</button>
+  <button class="tab-btn" onclick="showTab('mealplan')">🍽 Daily Meal Plan</button>
+  <button class="tab-btn" onclick="showTab('recipes')">👩‍🍳 Recipes</button>
+  <button class="tab-btn" onclick="showTab('tips')">💡 Tips & Cautions</button>
+</nav>
+
+<!-- ═══════════════════════════════════ FOODS ═══════════════════════════════════ -->
+
+<section id="foods" class="section active">
+  <p class="section-title">Best Foods in Pregnancy</p>
+  <p class="section-sub">All recommended fruits, vegetables, nuts, grains & dairy for the 5th month</p>
+
+  <!-- FRUITS -->
+
+  <div class="food-category">
+    <div class="cat-header">
+      <div class="cat-icon orange">🍊</div>
+      <div>
+        <div class="cat-name">Fruits</div>
+        <div class="cat-note">Rich in Vitamin C, Folate, Fibre & Natural Sugars</div>
+      </div>
+    </div>
+    <div class="food-tags">
+      <span class="food-tag">🍌 Banana</span>
+      <span class="food-tag green-tag">🥭 Mango (ripe, moderate)</span>
+      <span class="food-tag">🍊 Orange</span>
+      <span class="food-tag green-tag">🍎 Apple</span>
+      <span class="food-tag">🍇 Grapes</span>
+      <span class="food-tag rose-tag">🍓 Strawberry</span>
+      <span class="food-tag green-tag">🍈 Guava</span>
+      <span class="food-tag">🍑 Pear</span>
+      <span class="food-tag green-tag">🫐 Blueberry</span>
+      <span class="food-tag">🍒 Pomegranate</span>
+      <span class="food-tag rose-tag">🍉 Watermelon</span>
+      <span class="food-tag green-tag">🥝 Kiwi</span>
+      <span class="food-tag">🍋 Lemon</span>
+      <span class="food-tag">🫒 Avocado</span>
+      <span class="food-tag green-tag">🍍 Pineapple (moderate)</span>
+      <span class="food-tag">🍒 Cherries</span>
+      <span class="food-tag rose-tag">🫐 Amla (Indian Gooseberry)</span>
+    </div>
+    <div class="nutrient-row">
+      <span class="nutrient-pill pill-sage">Vitamin C</span>
+      <span class="nutrient-pill pill-rose">Folate</span>
+      <span class="nutrient-pill pill-gold">Potassium</span>
+      <span class="nutrient-pill pill-sage">Fibre</span>
+      <span class="nutrient-pill pill-rose">Antioxidants</span>
+    </div>
+  </div>
+
+  <!-- VEGETABLES -->
+
+  <div class="food-category">
+    <div class="cat-header">
+      <div class="cat-icon green">🥦</div>
+      <div>
+        <div class="cat-name">Vegetables</div>
+        <div class="cat-note">Iron, Folate, Calcium, Vitamins A & K</div>
+      </div>
+    </div>
+    <div class="food-tags">
+      <span class="food-tag green-tag">🥦 Broccoli</span>
+      <span class="food-tag">🍠 Sweet Potato</span>
+      <span class="food-tag green-tag">🌿 Spinach</span>
+      <span class="food-tag">🥕 Carrot</span>
+      <span class="food-tag green-tag">🫑 Bell Pepper</span>
+      <span class="food-tag">🧅 Beetroot</span>
+      <span class="food-tag green-tag">🥗 Methi (Fenugreek leaves)</span>
+      <span class="food-tag">🌿 Moringa (Drumstick)</span>
+      <span class="food-tag green-tag">🥬 Kale / Amaranth (Chaulai)</span>
+      <span class="food-tag">🧄 Garlic</span>
+      <span class="food-tag green-tag">🫚 Bottle Gourd (Lauki)</span>
+      <span class="food-tag">🌽 Corn</span>
+      <span class="food-tag green-tag">🥒 Cucumber</span>
+      <span class="food-tag">🍅 Tomato</span>
+      <span class="food-tag green-tag">🫘 Green Peas</span>
+      <span class="food-tag">🧅 Onion</span>
+      <span class="food-tag green-tag">🌿 Coriander leaves</span>
+      <span class="food-tag">🥬 Cabbage</span>
+      <span class="food-tag rose-tag">🌿 Bathua (Chenopodium)</span>
+      <span class="food-tag">🍆 Pumpkin</span>
+    </div>
+    <div class="nutrient-row">
+      <span class="nutrient-pill pill-rose">Iron</span>
+      <span class="nutrient-pill pill-sage">Folate</span>
+      <span class="nutrient-pill pill-gold">Vitamin A</span>
+      <span class="nutrient-pill pill-sage">Vitamin K</span>
+      <span class="nutrient-pill pill-rose">Calcium</span>
+    </div>
+  </div>
+
+  <!-- NUTS & SEEDS -->
+
+  <div class="food-category">
+    <div class="cat-header">
+      <div class="cat-icon brown">🌰</div>
+      <div>
+        <div class="cat-name">Nuts & Seeds</div>
+        <div class="cat-note">Healthy fats, Protein, Omega-3, Zinc</div>
+      </div>
+    </div>
+    <div class="food-tags">
+      <span class="food-tag">🌰 Almonds (soaked)</span>
+      <span class="food-tag green-tag">🥜 Walnuts</span>
+      <span class="food-tag">🌻 Pumpkin Seeds</span>
+      <span class="food-tag green-tag">🌿 Flaxseeds</span>
+      <span class="food-tag">🌻 Sunflower Seeds</span>
+      <span class="food-tag green-tag">🫘 Chia Seeds</span>
+      <span class="food-tag">🥜 Peanuts</span>
+      <span class="food-tag green-tag">🌰 Cashews (moderate)</span>
+      <span class="food-tag">🍃 Sesame Seeds (Til)</span>
+      <span class="food-tag green-tag">🌿 Melon Seeds (Muskmelon)</span>
+    </div>
+    <div class="nutrient-row">
+      <span class="nutrient-pill pill-gold">Omega-3</span>
+      <span class="nutrient-pill pill-sage">Healthy Fats</span>
+      <span class="nutrient-pill pill-rose">Zinc</span>
+      <span class="nutrient-pill pill-gold">Magnesium</span>
+      <span class="nutrient-pill pill-sage">Vitamin E</span>
+    </div>
+  </div>
+
+  <!-- GRAINS & LEGUMES -->
+
+  <div class="food-category">
+    <div class="cat-header">
+      <div class="cat-icon yellow">🌾</div>
+      <div>
+        <div class="cat-name">Grains, Legumes & Lentils</div>
+        <div class="cat-note">Protein, Complex Carbs, Iron, Fibre</div>
+      </div>
+    </div>
+    <div class="food-tags">
+      <span class="food-tag">🌾 Whole Wheat Roti</span>
+      <span class="food-tag green-tag">🍚 Brown Rice</span>
+      <span class="food-tag">🫘 Moong Dal (split mung)</span>
+      <span class="food-tag green-tag">🫘 Masoor Dal (red lentil)</span>
+      <span class="food-tag">🫘 Chana Dal</span>
+      <span class="food-tag green-tag">🫘 Rajma (kidney beans)</span>
+      <span class="food-tag">🫘 Black Chana</span>
+      <span class="food-tag green-tag">🌾 Oats</span>
+      <span class="food-tag">🌾 Millets (Ragi, Jowar, Bajra)</span>
+      <span class="food-tag green-tag">🫘 Sprouted moong</span>
+      <span class="food-tag">🌾 Quinoa</span>
+      <span class="food-tag green-tag">🫘 Tofu / Soy</span>
+    </div>
+    <div class="nutrient-row">
+      <span class="nutrient-pill pill-rose">Protein</span>
+      <span class="nutrient-pill pill-sage">Complex Carbs</span>
+      <span class="nutrient-pill pill-rose">Iron</span>
+      <span class="nutrient-pill pill-gold">Fibre</span>
+      <span class="nutrient-pill pill-sage">B Vitamins</span>
+    </div>
+  </div>
+
+  <!-- DAIRY -->
+
+  <div class="food-category">
+    <div class="cat-header">
+      <div class="cat-icon blue">🥛</div>
+      <div>
+        <div class="cat-name">Dairy & Calcium Sources</div>
+        <div class="cat-note">Calcium, Vitamin D, Protein, Probiotics</div>
+      </div>
+    </div>
+    <div class="food-tags">
+      <span class="food-tag blue-tag">🥛 Full-fat Milk</span>
+      <span class="food-tag">🧀 Paneer (cottage cheese)</span>
+      <span class="food-tag blue-tag">🥛 Dahi (curd / yogurt)</span>
+      <span class="food-tag">🧈 Ghee (clarified butter)</span>
+      <span class="food-tag blue-tag">🥛 Buttermilk (chaas)</span>
+      <span class="food-tag">🍦 Khichdi with ghee</span>
+    </div>
+    <div class="nutrient-row">
+      <span class="nutrient-pill pill-rose">Calcium</span>
+      <span class="nutrient-pill pill-gold">Vitamin D</span>
+      <span class="nutrient-pill pill-sage">Probiotics</span>
+      <span class="nutrient-pill pill-rose">Protein</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ NUTRIENTS ═══════════════════════════════════ -->
+
+<section id="nutrients" class="section">
+  <p class="section-title">Key Nutrients in Month 5</p>
+  <p class="section-sub">Baby's bones, brain, and muscles grow rapidly — these are your critical nutrients</p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-icon">🩸</div>
+      <div class="info-name">Iron</div>
+      <div class="info-why">Prevents anaemia; supports baby's blood development and oxygen delivery</div>
+      <div class="info-amount">27 mg/day · Spinach, Rajma, Ragi, Moringa</div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🦴</div>
+      <div class="info-name">Calcium</div>
+      <div class="info-why">Baby's bones and teeth are forming rapidly. Low intake pulls calcium from your own bones</div>
+      <div class="info-amount">1000 mg/day · Milk, Paneer, Sesame, Ragi</div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🧬</div>
+      <div class="info-name">Folate / Folic Acid</div>
+      <div class="info-why">Critical for neural tube development; reduces birth defect risk</div>
+      <div class="info-amount">600 mcg/day · Spinach, Broccoli, Moong dal</div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">💪</div>
+      <div class="info-name">Protein</div>
+      <div class="info-why">Baby's muscles, organs, and tissues need amino acids constantly</div>
+      <div class="info-amount">75–100 g/day · Dal, Paneer, Dahi, Tofu, Nuts</div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🧠</div>
+      <div class="info-name">Omega-3 (DHA)</div>
+      <div class="info-why">Baby's brain and eye development; reduces preterm birth risk</div>
+      <div class="info-amount">200 mg/day · Walnuts, Flaxseeds, Chia</div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">☀️</div>
+      <div class="info-name">Vitamin D</div>
+      <div class="info-why">Helps absorb calcium; supports immune system for both mother and baby</div>
+      <div class="info-amount">600 IU/day · Sunlight, Milk, Ghee</div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🍊</div>
+      <div class="info-name">Vitamin C</div>
+      <div class="info-why">Boosts iron absorption; builds baby's skin and connective tissue</div>
+      <div class="info-amount">85 mg/day · Amla, Orange, Bell Pepper, Guava</div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🥕</div>
+      <div class="info-name">Vitamin A</div>
+      <div class="info-why">Baby's vision, immune system and cell growth; good for skin</div>
+      <div class="info-amount">770 mcg/day · Carrot, Sweet Potato, Pumpkin</div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🌿</div>
+      <div class="info-name">Fibre</div>
+      <div class="info-why">Prevents constipation (very common in pregnancy); controls blood sugar</div>
+      <div class="info-amount">28 g/day · Oats, Vegetables, Fruits, Dal</div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">💧</div>
+      <div class="info-name">Water & Hydration</div>
+      <div class="info-why">Amniotic fluid, blood volume, and kidney function all depend on good hydration</div>
+      <div class="info-amount">2.5–3 L/day · Water, Coconut water, Chaas</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ MEAL PLAN ═══════════════════════════════════ -->
+
+<section id="mealplan" class="section">
+  <p class="section-title">Complete Daily Meal Plan</p>
+  <p class="section-sub">A full day plan from waking up to bedtime — vegetarian, balanced, and pregnancy-optimised</p>
+
+  <div class="day-header">🌅 Full Day Plan — 5th Month Pregnancy</div>
+  <div class="meal-timeline">
+
+```
+<div class="meal-row">
+  <div class="meal-time"><span class="time-label">On waking</span><span class="time-value">6:30 AM</span></div>
+  <div class="meal-dot dot-morning"></div>
+  <div class="meal-content">
+    <div class="meal-name">Morning Ritual Drink</div>
+    <div class="meal-desc">5–6 soaked almonds + 2 walnuts + 1 glass warm water with lemon & honey OR a glass of warm milk with a pinch of turmeric and saffron</div>
+    <div class="meal-benefits">
+      <span class="benefit-chip chip-green">Omega-3</span>
+      <span class="benefit-chip chip-orange">Vitamin C</span>
+      <span class="benefit-chip chip-purple">Hydration</span>
+    </div>
+  </div>
+</div>
+
+<div class="meal-row">
+  <div class="meal-time"><span class="time-label">Breakfast</span><span class="time-value">8:00 AM</span></div>
+  <div class="meal-dot dot-morning"></div>
+  <div class="meal-content">
+    <div class="meal-name">Vegetable Oats Upma + Fruit Bowl + Milk</div>
+    <div class="meal-desc">Oats cooked with spinach, carrot, peas, and mild spices + a bowl of banana, pomegranate & kiwi + 1 glass full-fat milk</div>
+    <div class="meal-benefits">
+      <span class="benefit-chip chip-green">Protein</span>
+      <span class="benefit-chip chip-blue">Iron & Folate</span>
+      <span class="benefit-chip chip-orange">Calcium</span>
+      <span class="benefit-chip chip-purple">Fibre</span>
+    </div>
+  </div>
+</div>
+
+<div class="meal-row">
+  <div class="meal-time"><span class="time-label">Mid-Morning</span><span class="time-value">10:30 AM</span></div>
+  <div class="meal-dot dot-snack"></div>
+  <div class="meal-content">
+    <div class="meal-name">Fruit + Nut Snack</div>
+    <div class="meal-desc">1 apple or guava OR 1 small bowl of pomegranate seeds + a handful of mixed seeds (pumpkin + sunflower + sesame)</div>
+    <div class="meal-benefits">
+      <span class="benefit-chip chip-green">Zinc</span>
+      <span class="benefit-chip chip-orange">Vitamin C</span>
+      <span class="benefit-chip chip-purple">Antioxidants</span>
+    </div>
+  </div>
+</div>
+
+<div class="meal-row">
+  <div class="meal-time"><span class="time-label">Lunch</span><span class="time-value">1:00 PM</span></div>
+  <div class="meal-dot dot-noon"></div>
+  <div class="meal-content">
+    <div class="meal-name">Full Thali — Roti + Dal + Sabzi + Rice + Salad + Curd</div>
+    <div class="meal-desc">2 whole wheat rotis + 1 bowl moong/masoor dal + 1 sabzi (palak paneer OR methi aloo OR lauki) + ½ cup brown rice + raw salad (carrot, cucumber, beetroot) + 1 bowl dahi</div>
+    <div class="meal-benefits">
+      <span class="benefit-chip chip-green">Complete Protein</span>
+      <span class="benefit-chip chip-blue">Iron</span>
+      <span class="benefit-chip chip-orange">Calcium</span>
+      <span class="benefit-chip chip-purple">Folate</span>
+    </div>
+  </div>
+</div>
+
+<div class="meal-row">
+  <div class="meal-time"><span class="time-label">Post-Lunch</span><span class="time-value">2:00 PM</span></div>
+  <div class="meal-dot dot-snack"></div>
+  <div class="meal-content">
+    <div class="meal-name">Coconut Water or Chaas (Buttermilk)</div>
+    <div class="meal-desc">1 glass fresh coconut water OR spiced chaas (buttermilk with cumin and coriander). Rest for 20–30 minutes</div>
+    <div class="meal-benefits">
+      <span class="benefit-chip chip-blue">Electrolytes</span>
+      <span class="benefit-chip chip-purple">Digestion</span>
+    </div>
+  </div>
+</div>
+
+<div class="meal-row">
+  <div class="meal-time"><span class="time-label">Evening Snack</span><span class="time-value">4:30 PM</span></div>
+  <div class="meal-dot dot-evening"></div>
+  <div class="meal-content">
+    <div class="meal-name">Sprouted Moong Chaat OR Ragi Ladoo + Milk</div>
+    <div class="meal-desc">1 small bowl sprouted moong chaat with lemon, tomato, cucumber & mild spices OR 1–2 ragi-peanut ladoos with a small cup warm milk</div>
+    <div class="meal-benefits">
+      <span class="benefit-chip chip-green">Protein</span>
+      <span class="benefit-chip chip-orange">Calcium</span>
+      <span class="benefit-chip chip-blue">Iron</span>
+    </div>
+  </div>
+</div>
+
+<div class="meal-row">
+  <div class="meal-time"><span class="time-label">Dinner</span><span class="time-value">7:30 PM</span></div>
+  <div class="meal-dot dot-night"></div>
+  <div class="meal-content">
+    <div class="meal-name">Light Dal Khichdi + Sabzi + Salad</div>
+    <div class="meal-desc">Moong dal khichdi (rice + dal + ghee + vegetables) + 1 sabzi (pumpkin, sweet potato, or spinach stir fry) + light salad + 1 tsp ghee on top</div>
+    <div class="meal-benefits">
+      <span class="benefit-chip chip-green">Easily Digestible</span>
+      <span class="benefit-chip chip-orange">Protein</span>
+      <span class="benefit-chip chip-purple">Comfort Food</span>
+    </div>
+  </div>
+</div>
+
+<div class="meal-row">
+  <div class="meal-time"><span class="time-label">Before Bed</span><span class="time-value">9:30 PM</span></div>
+  <div class="meal-dot dot-night"></div>
+  <div class="meal-content">
+    <div class="meal-name">Haldi Doodh (Golden Milk)</div>
+    <div class="meal-desc">1 glass warm full-fat milk with ½ tsp turmeric, a pinch of black pepper, and a few strands of saffron. Optional: small handful of soaked raisins</div>
+    <div class="meal-benefits">
+      <span class="benefit-chip chip-orange">Calcium</span>
+      <span class="benefit-chip chip-green">Anti-inflammatory</span>
+      <span class="benefit-chip chip-purple">Deep Sleep</span>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <div class="tip-box">
+    <h4>💧 Daily Hydration Goal</h4>
+    <p>Aim for 2.5–3 litres of fluid per day: plain water, coconut water, chaas, fresh juice, and herbal teas (ginger, fennel). Avoid cold drinks and packaged juices.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ RECIPES ═══════════════════════════════════ -->
+
+<section id="recipes" class="section">
+  <p class="section-title">Pregnancy-Safe Recipes</p>
+  <p class="section-sub">Simple, nutritious, vegetarian recipes designed for each meal of the day</p>
+
+  <!-- RECIPE 1 -->
+
+  <div class="recipe-card">
+    <div class="recipe-header">
+      <div>
+        <div class="recipe-title">Palak Paneer (Spinach & Cottage Cheese Curry)</div>
+        <div class="recipe-meta">Serves 2 · 30 minutes · Lunch / Dinner</div>
+        <div class="recipe-badges">
+          <span class="recipe-badge badge-veg">Vegetarian</span>
+          <span class="recipe-badge badge-protein">High Protein</span>
+          <span class="recipe-badge badge-iron">Iron Rich</span>
+          <span class="recipe-badge badge-calcium">Calcium</span>
+          <span class="recipe-badge badge-folate">Folate</span>
+        </div>
+      </div>
+    </div>
+    <div class="recipe-body">
+      <div class="ingredients-col">
+        <div class="col-title">Ingredients</div>
+        <ul class="ingredient-list">
+          <li>250g fresh spinach leaves</li>
+          <li>200g paneer, cubed</li>
+          <li>1 medium onion, chopped</li>
+          <li>2 medium tomatoes, chopped</li>
+          <li>1 tbsp ghee</li>
+          <li>1 tsp cumin seeds</li>
+          <li>½ tsp turmeric</li>
+          <li>1 tsp coriander powder</li>
+          <li>½ tsp garam masala (mild)</li>
+          <li>Salt to taste</li>
+          <li>2 tbsp fresh cream (optional)</li>
+          <li>1 tsp ginger-garlic paste</li>
+        </ul>
+      </div>
+      <div class="steps-col">
+        <div class="col-title">Method</div>
+        <div class="step"><div class="step-num">1</div><div class="step-text">Blanch spinach in boiling water for 2 mins, drain and blend into a smooth puree. Set aside.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Heat ghee in a pan, add cumin seeds. Once they splutter, add onion and sauté until golden brown.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Add ginger-garlic paste, cook 1 min. Add tomatoes and cook until soft and oil separates.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Add turmeric, coriander powder, and salt. Cook the masala for 2 more minutes.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Add the spinach puree, mix well, and simmer 5 mins. Gently fold in paneer cubes.</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-text">Finish with garam masala and cream if using. Serve hot with whole wheat roti.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECIPE 2 -->
+
+  <div class="recipe-card">
+    <div class="recipe-header">
+      <div>
+        <div class="recipe-title">Moong Dal Khichdi with Vegetables</div>
+        <div class="recipe-meta">Serves 2 · 25 minutes · Dinner / Light Meal</div>
+        <div class="recipe-badges">
+          <span class="recipe-badge badge-veg">Vegetarian</span>
+          <span class="recipe-badge badge-protein">Protein</span>
+          <span class="recipe-badge badge-iron">Easy Digestion</span>
+        </div>
+      </div>
+    </div>
+    <div class="recipe-body">
+      <div class="ingredients-col">
+        <div class="col-title">Ingredients</div>
+        <ul class="ingredient-list">
+          <li>½ cup moong dal (yellow split)</li>
+          <li>½ cup rice</li>
+          <li>1 medium carrot, diced</li>
+          <li>½ cup green peas</li>
+          <li>½ cup spinach, chopped</li>
+          <li>1 tbsp ghee</li>
+          <li>1 tsp cumin seeds</li>
+          <li>½ tsp turmeric</li>
+          <li>¼ tsp asafoetida (hing)</li>
+          <li>Salt to taste</li>
+          <li>2.5 cups water</li>
+          <li>Fresh coriander to garnish</li>
+        </ul>
+      </div>
+      <div class="steps-col">
+        <div class="col-title">Method</div>
+        <div class="step"><div class="step-num">1</div><div class="step-text">Wash rice and moong dal together. Soak for 15 minutes.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Heat ghee in a pressure cooker. Add cumin seeds and hing; let them sizzle.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Add diced carrot and peas, stir for 2 minutes. Add turmeric and salt.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Add drained rice, dal, and spinach. Mix everything well.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Add 2.5 cups water. Pressure cook for 3 whistles on medium heat.</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-text">Allow pressure to release, open and stir gently. Top with a tsp of ghee and coriander leaves. Serve warm.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECIPE 3 -->
+
+  <div class="recipe-card">
+    <div class="recipe-header">
+      <div>
+        <div class="recipe-title">Vegetable Oats Upma</div>
+        <div class="recipe-meta">Serves 2 · 20 minutes · Breakfast</div>
+        <div class="recipe-badges">
+          <span class="recipe-badge badge-veg">Vegetarian</span>
+          <span class="recipe-badge badge-iron">Iron</span>
+          <span class="recipe-badge badge-folate">Folate</span>
+          <span class="recipe-badge badge-protein">Fibre</span>
+        </div>
+      </div>
+    </div>
+    <div class="recipe-body">
+      <div class="ingredients-col">
+        <div class="col-title">Ingredients</div>
+        <ul class="ingredient-list">
+          <li>1 cup rolled oats</li>
+          <li>½ cup spinach, chopped</li>
+          <li>1 small carrot, grated</li>
+          <li>¼ cup green peas</li>
+          <li>1 small onion, finely chopped</li>
+          <li>1 tsp mustard seeds</li>
+          <li>8–10 curry leaves</li>
+          <li>1 tbsp ghee or oil</li>
+          <li>½ tsp turmeric</li>
+          <li>Salt to taste</li>
+          <li>Lemon juice — ½ lemon</li>
+          <li>Fresh coriander</li>
+        </ul>
+      </div>
+      <div class="steps-col">
+        <div class="col-title">Method</div>
+        <div class="step"><div class="step-num">1</div><div class="step-text">Dry roast oats in a pan for 3–4 minutes until lightly golden and nutty. Set aside.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Heat ghee, add mustard seeds and curry leaves. Once they crackle, add onion and sauté until translucent.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Add carrots and peas; cook for 3 minutes. Add turmeric and salt.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Add 1.5 cups water and bring to a boil. Add roasted oats and spinach, stirring continuously.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Cook on low heat for 4–5 minutes until oats absorb water and are soft.</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-text">Squeeze lemon juice, garnish with coriander. Serve hot with a glass of milk.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECIPE 4 -->
+
+  <div class="recipe-card">
+    <div class="recipe-header">
+      <div>
+        <div class="recipe-title">Ragi (Finger Millet) Laddoo</div>
+        <div class="recipe-meta">Makes 12–14 ladoos · 30 minutes · Snack / Evening</div>
+        <div class="recipe-badges">
+          <span class="recipe-badge badge-veg">Vegetarian</span>
+          <span class="recipe-badge badge-calcium">Calcium Rich</span>
+          <span class="recipe-badge badge-iron">Iron</span>
+          <span class="recipe-badge badge-protein">Protein</span>
+        </div>
+      </div>
+    </div>
+    <div class="recipe-body">
+      <div class="ingredients-col">
+        <div class="col-title">Ingredients</div>
+        <ul class="ingredient-list">
+          <li>1 cup ragi flour</li>
+          <li>½ cup roasted peanuts, coarsely crushed</li>
+          <li>3 tbsp jaggery powder (or to taste)</li>
+          <li>2 tbsp ghee</li>
+          <li>¼ tsp cardamom powder</li>
+          <li>2 tbsp sesame seeds (til), roasted</li>
+          <li>2 tbsp desiccated coconut (optional)</li>
+          <li>Warm water as needed to bind</li>
+        </ul>
+      </div>
+      <div class="steps-col">
+        <div class="col-title">Method</div>
+        <div class="step"><div class="step-num">1</div><div class="step-text">Dry roast ragi flour on low-medium heat for 8–10 minutes, stirring continuously until fragrant. Do not burn.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Transfer to a bowl. Add crushed peanuts, roasted sesame, jaggery, cardamom, and coconut.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Add warm ghee and mix well. The mixture should have a crumbly, sandy texture.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Add warm water very gradually, 1 tsp at a time, kneading until you can shape the mixture into firm balls.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Roll into small lemon-sized laddoos. Press firmly. Store in an airtight box at room temperature.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECIPE 5 -->
+
+  <div class="recipe-card">
+    <div class="recipe-header">
+      <div>
+        <div class="recipe-title">Sprouted Moong Chaat</div>
+        <div class="recipe-meta">Serves 2 · 10 minutes · Snack / Mid-Morning</div>
+        <div class="recipe-badges">
+          <span class="recipe-badge badge-veg">Vegetarian</span>
+          <span class="recipe-badge badge-protein">Protein</span>
+          <span class="recipe-badge badge-folate">Folate</span>
+        </div>
+      </div>
+    </div>
+    <div class="recipe-body">
+      <div class="ingredients-col">
+        <div class="col-title">Ingredients</div>
+        <ul class="ingredient-list">
+          <li>1.5 cups sprouted moong</li>
+          <li>1 small tomato, diced</li>
+          <li>½ cucumber, diced</li>
+          <li>½ small onion, finely chopped</li>
+          <li>Juice of 1 lemon</li>
+          <li>¼ tsp roasted cumin powder</li>
+          <li>Salt and black pepper to taste</li>
+          <li>Fresh coriander leaves</li>
+          <li>1 green chilli (optional, very mild)</li>
+          <li>½ tsp chaat masala (optional)</li>
+        </ul>
+      </div>
+      <div class="steps-col">
+        <div class="col-title">Method</div>
+        <div class="step"><div class="step-num">1</div><div class="step-text">Steam sprouted moong for 5 minutes (light steaming; they should remain slightly crunchy, not mushy).</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Allow to cool slightly. Transfer to a mixing bowl.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Add tomato, cucumber, onion, and fresh coriander. Mix gently.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Add lemon juice, cumin powder, salt, and black pepper. Toss to combine.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Taste and adjust seasoning. Serve immediately or refrigerate for up to 2 hours.</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-text">Note: Always steam sprouts during pregnancy — avoid eating raw sprouts as they may carry bacteria.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECIPE 6 -->
+
+  <div class="recipe-card">
+    <div class="recipe-header">
+      <div>
+        <div class="recipe-title">Haldi Doodh (Golden Milk / Turmeric Milk)</div>
+        <div class="recipe-meta">Serves 1 · 5 minutes · Before Bedtime</div>
+        <div class="recipe-badges">
+          <span class="recipe-badge badge-veg">Vegetarian</span>
+          <span class="recipe-badge badge-calcium">Calcium</span>
+          <span class="recipe-badge badge-iron">Anti-inflammatory</span>
+        </div>
+      </div>
+    </div>
+    <div class="recipe-body">
+      <div class="ingredients-col">
+        <div class="col-title">Ingredients</div>
+        <ul class="ingredient-list">
+          <li>1 glass (250ml) full-fat milk</li>
+          <li>½ tsp turmeric powder</li>
+          <li>A pinch of black pepper</li>
+          <li>3–4 strands of saffron (optional)</li>
+          <li>½ tsp ghee</li>
+          <li>1 tsp honey (or jaggery)</li>
+          <li>Pinch of cardamom powder</li>
+        </ul>
+      </div>
+      <div class="steps-col">
+        <div class="col-title">Method</div>
+        <div class="step"><div class="step-num">1</div><div class="step-text">Heat milk in a saucepan on low-medium heat. Do not boil vigorously.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Add turmeric, black pepper, saffron, and cardamom. Stir gently.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">Simmer for 2–3 minutes. The black pepper activates curcumin in turmeric, multiplying its benefits.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Remove from heat. Add ghee and honey/jaggery. Stir well and pour into a glass.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-text">Sip slowly before sleeping. This promotes deep sleep, reduces inflammation, and delivers calcium for baby's bones.</div></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════ TIPS ═══════════════════════════════════ -->
+
+<section id="tips" class="section">
+  <p class="section-title">Tips, Reminders & Cautions</p>
+  <p class="section-sub">Important things to keep in mind during the 5th month</p>
+
+  <div class="tip-box">
+    <h4>✅ Always eat small, frequent meals</h4>
+    <p>The baby is growing fast in Month 5 and compressing your stomach. Eat 6 small meals instead of 3 large ones. This also prevents heartburn and acidity, which are very common now.</p>
+  </div>
+  <div class="tip-box">
+    <h4>✅ Pair Iron-rich foods with Vitamin C</h4>
+    <p>Always eat iron-rich foods (spinach, dal, ragi) with a Vitamin C source (lemon juice, amla, orange) in the same meal. This doubles iron absorption naturally.</p>
+  </div>
+  <div class="tip-box">
+    <h4>✅ Soak nuts and seeds before eating</h4>
+    <p>Soak almonds overnight and eat in the morning. Soak chia and flaxseeds before adding to food. Soaking removes phytic acid and dramatically improves nutrient absorption.</p>
+  </div>
+  <div class="tip-box">
+    <h4>✅ Steam sprouts — never eat them raw</h4>
+    <p>Raw sprouts can harbour harmful bacteria during pregnancy. Always lightly steam sprouted moong, chickpeas, or any sprouts before eating.</p>
+  </div>
+
+  <div style="background: #fce4ec; border: 1px solid #f48fb1; border-radius: 14px; padding: 20px; margin-bottom: 16px;">
+    <h4 style="font-size: 14px; font-weight: 600; color: #880e4f; margin-bottom: 8px;">⚠️ Foods to Avoid</h4>
+    <p style="font-size: 13px; color: #5a5a5a;">Raw papaya (unripe), excessive pineapple, raw sprouts, unpasteurised dairy, very spicy or oily food, caffeine in excess (limit to 1 cup tea/day), packaged & processed food, excess salt, raw or undercooked eggs, street food with unhygienic handling, alcohol entirely.</p>
+  </div>
+
+  <div class="tip-box">
+    <h4>✅ Take prenatal supplements as prescribed</h4>
+    <p>Food alone may not meet all requirements for iron, folic acid, and Vitamin D. Always take supplements prescribed by your gynaecologist alongside this diet plan. Do not self-medicate.</p>
+  </div>
+  <div class="tip-box">
+    <h4>✅ Listen to your body's cravings & aversions</h4>
+    <p>Cravings and aversions during pregnancy are normal. If you feel nauseous with certain foods, replace them with nutrient-equivalent alternatives from this guide. Don't force yourself to eat anything that triggers discomfort.</p>
+  </div>
+  <div class="tip-box">
+    <h4>✅ Gentle movement and sunlight</h4>
+    <p>A 20–30 minute gentle walk in morning sunlight provides Vitamin D naturally. Pair with prenatal yoga if cleared by your doctor. Good sleep (7–8 hours) is as vital as good food.</p>
+  </div>
+
+  <div style="background: var(--soft-gold); border: 1px solid var(--gold); border-radius: 14px; padding: 20px;">
+    <h4 style="font-size: 14px; font-weight: 600; color: #7a5c1e; margin-bottom: 8px;">👩‍⚕️ Always Consult Your Doctor</h4>
+    <p style="font-size: 13px; color: #5a5a5a;">This guide is for general reference. Every pregnancy is unique. Always follow the specific dietary advice given by your gynaecologist or registered dietitian, especially if you have gestational diabetes, anaemia, hypertension, or any other condition.</p>
+  </div>
+</section>
+
+<div class="footer">
+  Pregnancy Nutrition Guide · 5th Month · Pure Vegetarian · For reference only — always consult your doctor
+</div>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
